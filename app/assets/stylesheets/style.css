@@ -8,7 +8,7 @@ html {
   background-size: cover;
 }
 
-/*#page-wrap {
+/*.page-wrap {
 width: 104px;
 height: 172px;
 margin: 148px 314px 148px 315px;
@@ -20,15 +20,22 @@ box-shadow: 0 0 20px black;
 overflow: hidden;
 }*/
 
-#page-wrap {
+.page-wrap {
 width: 300px;
 height: 420px;
-margin: 40px auto;
-padding: 20px;
+margin: 75px auto;
 background: white;
 -moz-box-shadow: 0 0 20px black;
 -webkit-box-shadow: 0 0 20px black;
 box-shadow: 0 0 20px black;
+overflow: hidden;
+}
+
+.inner-image {
+width: 300px;
+height: 420px;
+background: white;
+
 overflow: hidden;
 }
 
