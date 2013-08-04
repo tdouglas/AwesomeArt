@@ -85,7 +85,7 @@ imageArray = [
 
 // can this be stored in a function as well and shuffle so the pictures shuffle in a unique order
 for (var i = 0; i < imageArray.length; i++) {
-  $('.page-wrap').append(imageArray);
+  $('.inner-image').append(imageArray);
 }
 
 $('img').each(function(){
