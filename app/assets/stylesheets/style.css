@@ -1,0 +1,39 @@
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One);
+
+html {
+  background: url(bg16.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*#page-wrap {
+width: 104px;
+height: 172px;
+margin: 148px 314px 148px 315px;
+padding: 21px;
+background: white;
+-moz-box-shadow: 0 0 20px black;
+-webkit-box-shadow: 0 0 20px black;
+box-shadow: 0 0 20px black;
+overflow: hidden;
+}*/
+
+
+#page-wrap {
+width: 300px;
+height: 420px;
+margin: 40px auto;
+padding: 20px;
+background: white;
+-moz-box-shadow: 0 0 20px black;
+-webkit-box-shadow: 0 0 20px black;
+box-shadow: 0 0 20px black;
+overflow: hidden;
+}
+
+p {
+  font: 15px/2 Georgia,
+  Serif; margin: 0 0 30px 0;
+  text-indent: 40px;
