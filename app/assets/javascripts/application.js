@@ -13,3 +13,42 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+// zoom in on div
+$('#page-wrap').on('click',function(){
+  var step = 2;
+  currIEZoom += step;
+  $('#page-wrap').css('zoom', ' ' + currIEZoom + '%');
+});
+
+
+hide = $('#page-wrap').hide();
+show = $('#page-wrap').show();
+
+// slide down
+$(document.body).hover(function () {
+  if ($('#page-wrap').is(":hidden")) {
+  $('#page-wrap').slideDown("slow");
+  } else {
+  $('#page-wrap').hide();
+  }
+});
+
+$(document.body).click(function () {
+  $('#page-wrap').slideDown("slow");
+});
+
+// slide up
+  $(document.body).hover(function () {
+    if ($("div:first").is(":hidden")) {
+      $("div").show("slow");
+    } else {
+      $("div").slideUp();
+    }
+  });
+
+$(function(){
+  $('#page-wrap').hide();
+  $('#page-wrap').slideDown(2100);
+});
