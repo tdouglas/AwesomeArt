@@ -49,3 +49,46 @@ p {
   font: 15px/2 Georgia,
   Serif; margin: 0 0 30px 0;
   text-indent: 40px;
+}
+
+.sign-in-up {
+  position: fixed;
+  top:25px;
+  right:9px;
+  font-size: 14px;
+  background-color: #6cd623;
+  border-radius: 7px;
+  font-weight: bold;
+  width: 180px;
+  padding: 6px;
+  font-family: Julius Sans One;
+}
+
+.sign-in-up ul li {
+  text-decoration: none;
+  display: inline;
+  margin:10px;
+  text-align: center;
+}
+
+.stop {
+  position: fixed;
+  bottom:15%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -65px;
+  background-color: red;
+  font-weight: bold;
+  width: 130px;
+  text-align: center;
+  font-family: Julius Sans One;
+  font-size: 50px;
+  border-radius: 30px/10px;
+  border: 3px solid #A60000;
+  -moz-box-shadow: 0 0 20px black;
+  -webkit-box-shadow: 0 0 20px black;
+
+
+}
+
+

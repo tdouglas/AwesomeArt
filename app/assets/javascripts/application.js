@@ -62,11 +62,19 @@ $(window).resize(function() {
    fitImagetoContainer();
 });
 
+/* no longer needed
 $('.page-wrap').prepend('<img src="assets/bg14.jpg" />');
+$('img').each(function(){
+  if ($(this).width() > $(this).height()){
+        $(this).addClass('inner-image');
+  } else {
+        $(this).addClass('inner-image');
+  }
+});
+*/
 
-
-// can this be a function that pulls photos from assets folder directly
-imageArray = [
+// can this be a function that pulls photos from assets folder directl
+var imageArray = [
   '<img src="assets/bg1.jpg"/>',
   '<img src="assets/bg2.jpg"/>',
   '<img src="assets/bg3.jpg"/>',
@@ -83,18 +91,57 @@ imageArray = [
   '<img src="assets/bg15.jpg"/>'
 ];
 
-// can this be stored in a function as well and shuffle so the pictures shuffle in a unique order
+function parse() {
+
 for (var i = 0; i < imageArray.length; i++) {
-  $('.inner-image').append(imageArray);
+   $.parseHTML(imageArray[i]);
+   imageArray[i].append('.inner-image');
+  }
 }
 
-$('img').each(function(){
-  if ($(this).width() > $(this).height()){
-        $(this).addClass('inner-image');
-  } else {
-        $(this).addClass('inner-image');
+
+
+// $('.inner-image').append(imageArray);
+
+// for (var i = 0; i < imageArray.length; i++) {
+//   $('.inner-image').append(imageArray[i]);
+// }
+
+
+
+// can this be stored in a function as well and shuffle so the pictures shuffle in a unique order
+// for (var i = 0; i < imageArray.length; i++) {
+//   $('.inner-image').append(imageArray);
+
+var slideWidth = 300;
+var slideHeight = 420;
+
+var currentTranslation = -slideWidth;
+
+function init() {
+  imageArray.style.webkitTransition = '-webkit-transform 1200ms';
+  getArray();
+}
+
+function getArray() {
+  for (var i = 0; i < imageArray.length; i++) {
+      $('.inner-image').append(imageArray);
+    // imageArray.src = ary[i].media.m;
   }
-});
+  setInterval(startTheShow, 2000);
+}
+
+
+function startTheShow() {
+  imageArray.style.webkitTransform = 'translateX(' + currentTranslation + 'px)';
+  currentTranslation -= slideWidth;
+
+  if (currentTranslation == -slideWidth * imageArray.length) {
+    currentTranslation = 0;
+  }
+}
+
+
 
 
 
