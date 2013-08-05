@@ -22,7 +22,6 @@ $('.page-wrap').on('click',function(){
   $('.page-wrap').css('zoom', ' ' + currIEZoom + '%');
 });
 
-
 hide = $('.page-wrap').hide();
 show = $('.page-wrap').show();
 
@@ -51,16 +50,7 @@ $(document.body).click(function () {
 $(function(){
   $('.page-wrap').hide();
   $('.page-wrap').slideDown(2100);
-  init();
-});
-
-function fitImagetoContainer() {
-  $("img").each(function(i) {
-     $(this).width($(this).parent().width());
-  });
-}
-$(window).resize(function() {
-   fitImagetoContainer();
+  setTimeout(init, 2500);
 });
 
 /* no longer needed
@@ -72,6 +62,16 @@ $('img').each(function(){
         $(this).addClass('inner-image');
   }
 });
+
+function fitImagetoContainer() {
+  $("img").each(function(i) {
+     $(this).width($(this).parent().width());
+  });
+}
+$(window).resize(function() {
+   fitImagetoContainer();
+});
+
 */
 
 // can this be a function that pulls photos from assets folder directl
@@ -107,6 +107,9 @@ for (var i = 0; i < imageArray.length; i++) {
 // for (var i = 0; i < imageArray.length; i++) {
 //   $('.inner-image').append(imageArray[i]);
 // }
+// function zoom() {
+//   $('#logo').css('webkit-transition', 'webkit-transform 2s');
+// }
 
 
 
@@ -118,39 +121,64 @@ var slideWidth = 300;
 var slideHeight = 420;
 
 var currentTranslation = -slideWidth;
+var myInterval;
 
 
 function init() {
+
   $('.inner-image').append(imageArray);
   $('#strip').css('webkit-transition', '-webkit-transform 1200ms');
-  // getArray();
+
+  $('#stop').click(function() {
+    stop();
+  });
+
+  // $('.sign-in-up li:last').click(function() {
+  // xyz();
+  // console.log("clicked");
+  // });
+
+  myInterval = setInterval(next, 1200);
 }
 
-function next(){
+function next() {
   $('#strip').css('-webkit-transform', 'translateX(' + currentTranslation + 'px)');
   currentTranslation -= 300;
 
-  //style.webkitTransform = 'translateX(-300px)';
-}
+  // console.log('currentTranslation', currentTranslation);
 
-function getArray() {
-  for (var i = 0; i < imageArray.length; i++) {
-    console.log(imageArray[i]);
-      // $('.inner-image').append(imageArray);
-    // imageArray.src = ary[i].media.m;
-  }
-  setInterval(startTheShow, 2000);
-}
-
-
-function startTheShow() {
-  imageArray.style.webkitTransform = 'translateX(' + currentTranslation + 'px)';
-  currentTranslation -= slideWidth;
-
-  if (currentTranslation == -slideWidth * imageArray.length) {
+  if (currentTranslation === -slideWidth * imageArray.length) {
     currentTranslation = 0;
   }
+
 }
+
+// function getArray() {
+//   for (var i = 0; i < imageArray.length; i++) {
+//     console.log(imageArray[i]);
+//       // $('.inner-image').append(imageArray);
+//     // imageArray.src = ary[i].media.m;
+//   }
+//   setInterval(startTheShow, 2000);
+// }
+
+apiImage = -1800;
+
+function stop() {
+  console.log('stopping the animation');
+  $('#strip').css('-webkit-transform', 'translateX(' + apiImage + 'px)');
+    clearInterval(myInterval);
+}
+
+// alter nav bar when button is clicked
+$('.sign-in-up li:last').click(function() {
+  $(this).slideUp();
+});
+
+// append sign-up div above over carousel
+$('.page-wrap').prepend('<div id="sign-up"</div>');
+
+
 
 
 
