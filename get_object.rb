@@ -8,8 +8,8 @@
 require 'nokogiri'
 require 'open-uri'
 
-# This creates an array of 2000 numbers, and returns a random one.
-# I chose 2000 randomly. It could be anything.
+# This creates an array of 135782 numbers, and returns a random one.
+# I though this was the size of the collection, but it's not
 arr = (1..135782).to_a
 object_id = arr.shuffle[0].to_s
 
@@ -22,14 +22,11 @@ title = data.xpath("//@title").text
 artist = data.xpath("//@name").text
 medium = data.xpath("//@medium").text
 date = data.xpath("//@object_date").text
+collection = data.xpath("//@collection").text
 
-# This finds the URLs associated with the object.
-# uri = data.xpath("//@uri")
 # This is a link to the object's page on the museum's website.
-# This can be cleaned up because it is always the same format
 link = "http://www.brooklynmuseum.org/opencollection/objects/" + object_id
 # This is a link to an image of the object.
-# But I think this uses the accession number rather than object id
 image = data.xpath("//image")[0].values[0]
 
 # These just put them to the screen.
@@ -37,11 +34,7 @@ puts title
 puts artist
 puts medium
 puts date
+puts collection
 puts link
 puts image
 puts object_id
-
-# image = data.xpath("//image")
-# details = image[0]
-# details.values[0]
-# data.xpath("//image")[0].values[0]
