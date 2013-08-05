@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One);
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Crafty+Girls|Petit+Formal+Script|Eagle+Lake|Gochi+Hand|Engagement|Architects+Daughter|Ruthie|Pacifico|Amatic+SC|Shadows+Into+Light+Two);
 
 html {
   background: url(bg16.jpg) no-repeat center center fixed;
@@ -38,6 +38,13 @@ height: 420px;
 background: white;
 }
 
+#sign-up {
+position: relative;
+width: 300px;
+height: 420px;
+background: white;
+}
+
 img {
   float: left;
   width: 300px;
@@ -45,29 +52,31 @@ img {
   overflow: hidden;
 }
 
-p {
-  font: 15px/2 Georgia,
-  Serif; margin: 0 0 30px 0;
-  text-indent: 40px;
+#logo {
+  position: fixed;
+  top: 0;
+  left: 20px;
+  width: 300px;
+  height: 170px;
 }
 
 .sign-in-up {
   position: fixed;
-  top:25px;
+  top: 5px;
   right:9px;
   font-size: 14px;
   background-color: #6cd623;
   border-radius: 7px;
   font-weight: bold;
-  width: 180px;
-  padding: 6px;
+  width: auto;
+  padding: 7px;
   font-family: Julius Sans One;
 }
 
 .sign-in-up ul li {
   text-decoration: none;
   display: inline;
-  margin:10px;
+  margin: 9px;
   text-align: center;
 }
 
@@ -77,18 +86,26 @@ p {
   left: 50%;
   margin-top: -50px;
   margin-left: -65px;
-  background-color: red;
+  background-color: black;
   font-weight: bold;
   width: 130px;
   text-align: center;
   font-family: Julius Sans One;
+  color: white;
   font-size: 50px;
   border-radius: 30px/10px;
-  border: 3px solid #A60000;
+  border: 3px solid black;
   -moz-box-shadow: 0 0 20px black;
   -webkit-box-shadow: 0 0 20px black;
-
-
 }
 
+p {
+  font: 15px/2 Georgia,
+  Serif; margin: 0 0 30px 0;
+  text-indent: 40px;
+}
 
+/*body {
+-webkit-transition: -webkit-transform 2s ease-in-out;
+}
+*/
