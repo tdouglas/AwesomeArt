@@ -1,5 +1,5 @@
 AwesomeArt::Application.routes.draw do
 
-  root :to => 'welcome#index'
+  root :to => 'artworks#index'
 
 end

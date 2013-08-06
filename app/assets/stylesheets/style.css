@@ -112,11 +112,40 @@ img {
   padding-right: 15px;
 }
 
-#input {
+.sign-in {
+  height: 420px;
+  background: #141414;
+  background: rgba(0,0,0,0.8);
+  opacity:1.4;
+  color: white;
+  font-family: Julius Sans One;
+  text-align: center;
+  line-height: 1.2;
+  padding-left: 10px;
+  padding-right: 15px;
+}
+
+.sign-in h1 {
+  font-size: 54px;
+  text-align: left;
+  text-indent: 20px;
+}
+
+.sign-in h3 {
+  font-size: 19px;
+  text-align: right;
+  padding-bottom: 40px;
+}
+
+.input {
   font-family: Times;
   font-size: 13px;
   font-weight: lighter;
   text-align: left;
+}
+
+.input #two {
+  padding-bottom: 70px;
 }
 
 input {
@@ -140,7 +169,7 @@ input {
   color: black;
 }
 
-#sign-up-button{
+.button{
   -webkit-user-select: none;
   -moz-user-select: none;
   color: #fff;
@@ -159,7 +188,16 @@ input {
   cursor: pointer;
   overflow: hidden;
   text-decoration: none;
-  margin: 35px;
+}
+
+#sign-up-button {
+  margin: 82px;
+  padding: 6px 12px;
+}
+
+#-button {
+  margin: 47px;
+  padding: 6px 45px;
 }
 
 h2 {
@@ -180,7 +218,7 @@ h4 {
   color: #6cd623;
 }
 
-#log-in p {
+#sign-in p {
   position: relative;
   bottom: -30px;
   right: 8px;
@@ -188,6 +226,16 @@ h4 {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   margin: 0 0 30px 0;
   text-indent: 50px;
+}
+
+#log-in p {
+  position: relative;
+  bottom: -100px;
+  right: 3px;
+  font-size: 11px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  margin: 0 0 30px 0;
+  text-indent: 70px;
 }
 
 #log-in-button {
@@ -214,12 +262,45 @@ h4 {
   overflow: visible;
   text-decoration: none;
   right: -30px;
+}
+
+#last-button {
+  display: inline;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  color: white;
+  text-shadow: rgba(12,12,12,0.4) 0 -1px;
+  border-width: 0;
+  border-radius: 3px;
+  background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#ee6767),color-stop(100%,#c83b3a));
+  background-image: -webkit-linear-gradient(#ee6767,#c83b3a);
+  background-image: -moz-linear-gradient(#ee6767,#c83b3a);
+  background-image: linear-gradient(#ee6767,#c83b3a);
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 11px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  overflow: visible;
+  text-decoration: none;
+  right: -31px;
+  bottom: 2px;
+}
+
+
+.login {
+  text-indent: 50px;
+}
 
 .span {
   color: blue;
 }
 
-#test {
+.test {
   position: relative;
 }
 

@@ -8,40 +8,51 @@
 require 'nokogiri'
 require 'open-uri'
 
-# This creates an array of 2000 numbers, and returns a random one.
-# I chose 2000 randomly. It could be anything.
-arr = (1..135782).to_a
-object_id = arr.shuffle[0].to_s
+def get_random_object
+  # This creates an array of 220000 numbers, and returns a random one.
+  # This is the largest id in the collection I've found so far.
+  arr = (1..220000).to_a
+  @object_id = arr.shuffle[0].to_s
 
-# This takes the XML doc from the Museum's website, using the API,
-# and using the random object_id from above.
-data = Nokogiri::XML(open("http://www.brooklynmuseum.org/opencollection/api/?method=collection.getItem&version=1&api_key=6ZrLVBX719&item_type=object&item_id=" + object_id + "&image_results_limit=1&format=xml"))
+  # This takes the XML doc from the Museum's website, using the API,
+  # and using the random object_id from above.
+  data = Nokogiri::XML(open("http://www.brooklynmuseum.org/opencollection/api/?method=collection.getItem&version=1&api_key=6ZrLVBX719&item_type=object&item_id=" + @object_id + "&image_results_limit=1&format=xml"))
 
-# This finds the object's title, artist, medium, and date.
-title = data.xpath("//@title").text
-artist = data.xpath("//@name").text
-medium = data.xpath("//@medium").text
-date = data.xpath("//@object_date").text
+  # This finds the object's title, artist, medium, date, and collection.
+  @title = data.xpath("//@title").text
+  @artist = data.xpath("//@name").text
+  @medium = data.xpath("//@medium").text
+  @date = data.xpath("//@object_date").text
+  @collection = data.xpath("//@collection").text
+  # This is a link to the object's page on the museum's website.
+  @link = "http://www.brooklynmuseum.org/opencollection/objects/" + @object_id
+  # This is a link to an image of the object.
+  # if data.xpath("//image")[0]
+  @image = data.xpath("//image")[0].values[0]
+  # end
+end
 
-# This finds the URLs associated with the object.
-# uri = data.xpath("//@uri")
-# This is a link to the object's page on the museum's website.
-# This can be cleaned up because it is always the same format
-link = "http://www.brooklynmuseum.org/opencollection/objects/" + object_id
-# This is a link to an image of the object.
-# But I think this uses the accession number rather than object id
-image = data.xpath("//image")[0].values[0]
+# This function handles errors. It calls the get_random_object function,
+# but if there is no image url it spews an error. So it recursively calls
+# itself until it grabs an artwork with an image url
+def this_handles_errors
+  begin
+    get_random_object
+  rescue
+    # this_handles_errors
+    retry
+  end
+end
+
+# Here I call the function
+this_handles_errors
 
 # These just put them to the screen.
-puts title
-puts artist
-puts medium
-puts date
-puts link
-puts image
-puts object_id
-
-# image = data.xpath("//image")
-# details = image[0]
-# details.values[0]
-# data.xpath("//image")[0].values[0]
+puts @title
+puts @artist
+puts @medium
+puts @date
+puts @collection
+puts @link
+puts @image
+puts @object_id

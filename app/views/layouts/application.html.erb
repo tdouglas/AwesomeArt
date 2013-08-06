@@ -4,9 +4,6 @@
   <title>AwesomeArt</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <script src="js/jquery.min.js"></script>
-2
-<script type="text/javascript" src="js/jquery.flippy.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -18,27 +15,46 @@
     <%= render 'navbar' %>
   </nav>
   <div class="page-wrap">
-    <div class="sign-up">
-      <h2>Museum Art.</h2><h3>When You Want It.</h3>
-      <div id="extend">
-        <h4>Sign-up to <span>save</span> your favorite artwork <span>forever</span>.</h4>
-      </div> <!-- extend -->
-      <div id="input">
-        <form id="test" action="/" method="get">
-          Email address:</br><input id="" type="text" name="SIGN-UP"/></br>
-          Password:</br><input id="" type="password" name="PWD"/></br>
-          Confirm Password:</br><input id="" type="password" name="SIGN-UP"/></br>
-          </br>
-          <button"/" id="sign-up-button">Get started - it's free!</button>
-        </form>
-      </div> <!-- input -->
-      <div id="log-in">
-        <p>Already have an account?
-          <button"/" id="log-in-button">Login</button></p>
-      </div> <!-- log-in -->
-    </div> <!-- sign-up-->
-    <div class="inner-image" id="strip">
-    </div> <!-- inner-mage -->
+    <div class="flipbox-container">
+      <div class="sign-up flipbox">
+        <h2>Museum Art.</h2><h3>When You Want It.</h3>
+        <div id="extend">
+          <h4>Sign-up to <span>save</span> your favorite artwork <span>forever</span>.</h4>
+        </div> <!-- extend -->
+        <div class="input">
+          <form class="test" action="/" method="get">
+            Email address:</br><input id="" type="text" name="SIGN-UP"/></br>
+            Password:</br><input id="" type="password" name="PWD"/></br>
+            Confirm Password:</br><input id="" type="password" name="SIGN-UP"/></br>
+            </br>
+            <button"/" class="button" id="sign-up-button">Sign-Up</button>
+          </form>
+        </div> <!-- input -->
+        <div id="sign-in" id="three-fields">
+          <p>Already have an account?
+            <button"/" id="log-in-button">Login</button></p>
+        </div> <!-- log-in -->
+      </div> <!-- sign-up & flipbox-->
+      <div class="sign-in flipbox">
+        <h1>Login</h1> <h3>to your Account</h3>
+        <div class="input" id="two-field">
+          <form class="test" action="/" method="get">
+            Email address:</br><input id="" type="text" name="SIGN-UP"/></br>
+            Password:</br><input id="" type="password" name="PWD"/></br>
+            </br>
+            <button"/" class="button login" id="sign-up-button">Login</button>
+          </form>
+        </div> <!-- input -->
+        <div id="log-in">
+          <p>Get started - It's free!
+          <button"/" id="last-button">Sign-Up</button></p>
+        </div> <!-- log-in -->
+      </div> <!--sign-in & flipbox-->
+    </div> <!-- flipbox-container -->
+
+    <div class="inner-image flipbox" id="strip">
+    </div> <!-- inner-image -->
+
   </div> <!-- page-wrap -->
   <div class="stop" id="stop">
     <%= render 'stop' %>

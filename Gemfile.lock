@@ -54,6 +54,7 @@ GEM
       debugger-ruby_core_source (~> 1.2.3)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.3)
+    ensure_valid_encoding (0.5.3)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -67,13 +68,20 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    marc (0.5.1)
     meta_request (0.2.7)
       callsite
       rack-contrib
       railties
     method_source (0.8.1)
     mime-types (1.23)
+    mini_portile (0.5.1)
     multi_json (1.7.7)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
+    openurl (0.4.3)
+      ensure_valid_encoding
+      marc
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -148,6 +156,9 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   meta_request
+  nokogiri
+  openurl
+  pry
   pry-debugger
   pry-rails
   pry-stack_explorer
