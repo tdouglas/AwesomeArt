@@ -9,9 +9,9 @@ require 'nokogiri'
 require 'open-uri'
 
 def get_random_object
-  # This creates an array of 135782 numbers, and returns a random one.
-  # I though this was the size of the collection, but it's not
-  arr = (1..135782).to_a
+  # This creates an array of 220000 numbers, and returns a random one.
+  # This is the largest id in the collection I've found so far.
+  arr = (1..220000).to_a
   @object_id = arr.shuffle[0].to_s
 
   # This takes the XML doc from the Museum's website, using the API,
@@ -27,7 +27,9 @@ def get_random_object
   # This is a link to the object's page on the museum's website.
   @link = "http://www.brooklynmuseum.org/opencollection/objects/" + @object_id
   # This is a link to an image of the object.
+  # if data.xpath("//image")[0]
   @image = data.xpath("//image")[0].values[0]
+  # end
 end
 
 # This function handles errors. It calls the get_random_object function,
@@ -37,7 +39,8 @@ def this_handles_errors
   begin
     get_random_object
   rescue
-    save
+    # this_handles_errors
+    retry
   end
 end
 

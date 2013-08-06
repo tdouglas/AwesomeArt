@@ -7,7 +7,7 @@ class CreateArtworks < ActiveRecord::Migration
       t.string :collection
       t.string :image_url
       t.string :museum_page_url
-      t.integer :object_id
+      t.integer :image_id
       t.timestamps
     end
   end
