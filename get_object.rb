@@ -1,3 +1,9 @@
+# THIS IS NOW OUTDATED
+
+
+
+
+
 # Ajax requests are proving difficult. If we can't figure them out, we can use
 # this script. It uses Nokogiri, the parsing gem I used in my first project. We
 # can either run this code every time, or run it ahead of time and populate our
