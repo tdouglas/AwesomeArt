@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require flippy.js
 //= awesomeart.js
+//= userauth.js
 //= require_tree .
 

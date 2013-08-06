@@ -22,13 +22,29 @@
           <h4>Sign-up to <span>save</span> your favorite artwork <span>forever</span>.</h4>
         </div> <!-- extend -->
         <div class="input">
-          <form class="test" action="/" method="get">
-            Email address:</br><input id="" type="text" name="SIGN-UP"/></br>
-            Password:</br><input id="" type="password" name="PWD"/></br>
+
+
+
+     <!--      <form class="test" action="/" method="get">
+            Email address:</br><input id="sign-up-email" type="text" name="SIGN-UP"/></br>
+            Password:</br><input id="sign-up-password" type="password" name="PWD"/></br>
             Confirm Password:</br><input id="" type="password" name="SIGN-UP"/></br>
             </br>
             <button"/" class="button" id="sign-up-button">Sign-Up</button>
-          </form>
+          </form> -->
+
+        <%= form_for @user do |f| %>
+
+          Email address:</br><%= f.text_field :email, :id => "sign-up-email" %></br>
+          Password:</br><%= f.password_field :password, :id => "sign-up-password" %></br>
+          Confirm Password:</br><%= f.password_field :password_confirmation, :id => "" %></br>
+          </br>
+          <%= f.submit value = "Sign up", :class => "button", :id => "sign-up-button" %>
+
+        <% end %>
+
+
+
         </div> <!-- input -->
         <div id="sign-in" id="three-fields">
           <p>Already have an account?
@@ -42,7 +58,7 @@
             Email address:</br><input id="" type="text" name="SIGN-UP"/></br>
             Password:</br><input id="" type="password" name="PWD"/></br>
             </br>
-            <button"/" class="button login" id="sign-up-button">Login</button>
+            <button"/" class="button login" id="sign-in-button">Login</button>
           </form>
         </div> <!-- input -->
         <div id="log-in">
