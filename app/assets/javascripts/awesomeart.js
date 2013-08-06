@@ -69,22 +69,24 @@ $(window).resize(function() {
 */
 
 // can this be a function that pulls photos from assets folder directl
-var imageArray = [
-  '<img src="assets/bg1.jpg"/>',
-  '<img src="assets/bg2.jpg"/>',
-  '<img src="assets/bg3.jpg"/>',
-  '<img src="assets/bg4.jpg"/>',
-  '<img src="assets/bg5.jpg"/>',
-  '<img src="assets/bg6.jpg"/>',
-  '<img src="assets/bg7.gif"/>',
-  '<img src="assets/bg8.jpg"/>',
-  '<img src="assets/bg9.jpg"/>',
-  '<img src="assets/bg10.jpg"/>',
-  '<img src="assets/bg11.jpg"/>',
-  '<img src="assets/bg12.jpg"/>',
-  '<img src="assets/bg13.jpg"/>',
-  '<img src="assets/bg15.jpg"/>'
-];
+// var imageArray = [
+//   '<img src="assets/bg1.jpg"/>',
+//   '<img src="assets/bg2.jpg"/>',
+//   '<img src="assets/bg3.jpg"/>',
+//   '<img src="assets/bg4.jpg"/>',
+//   '<img src="assets/bg5.jpg"/>',
+//   '<img src="assets/bg6.jpg"/>',
+//   '<img src="assets/bg7.gif"/>',
+//   '<img src="assets/bg8.jpg"/>',
+//   '<img src="assets/bg9.jpg"/>',
+//   '<img src="assets/bg10.jpg"/>',
+//   '<img src="assets/bg11.jpg"/>',
+//   '<img src="assets/bg12.jpg"/>',
+//   '<img src="assets/bg13.jpg"/>',
+//   '<img src="assets/bg15.jpg"/>'
+// ];
+
+var imageArray = [];
 
 function parse() {
 
@@ -119,10 +121,11 @@ var myInterval;
 
 
 function init() {
+  $('.flipbox-container').hide();
 
-  $('.inner-image').append(imageArray);
+  // $('.inner-image').append(imageArray);
+
   $('#strip').css('webkit-transition', '-webkit-transform 1200ms');
-
   $('#stop').click(function() {
     stop();
   });
@@ -139,9 +142,9 @@ function next() {
   $('#strip').css('-webkit-transform', 'translateX(' + currentTranslation + 'px)');
   currentTranslation -= 300;
 
-  // console.log('currentTranslation', currentTranslation);
+  console.log('currentTranslation', currentTranslation);
 
-  if (currentTranslation === -slideWidth * imageArray.length) {
+  if (currentTranslation === -slideWidth * 10) {
     currentTranslation = 0;
   }
 
