@@ -15,13 +15,61 @@
     <%= render 'navbar' %>
   </nav>
   <div class="page-wrap">
-    <div class="inner-image" id="strip">
-    </div>
-  </div>
+    <div class="flipbox-container">
+      <div class="sign-up flipbox">
+        <h2>Museum Art.</h2><h3>When You Want It.</h3>
+        <div id="extend">
+          <h4>Sign-up to <span>save</span> your favorite artwork <span>forever</span>.</h4>
+        </div> <!-- extend -->
+        <div class="input">
+          <form class="test" action="/" method="get">
+            Email address:</br><input id="" type="text" name="SIGN-UP"/></br>
+            Password:</br><input id="" type="password" name="PWD"/></br>
+            Confirm Password:</br><input id="" type="password" name="SIGN-UP"/></br>
+            </br>
+            <button"/" class="button" id="sign-up-button">Sign-Up</button>
+          </form>
+        </div> <!-- input -->
+        <div id="sign-in" id="three-fields">
+          <p>Already have an account?
+            <button"/" id="log-in-button">Login</button></p>
+        </div> <!-- log-in -->
+      </div> <!-- sign-up & flipbox-->
+      <div class="sign-in flipbox">
+        <h1>Login</h1> <h3>to your Account</h3>
+        <div class="input" id="two-field">
+          <form class="test" action="/" method="get">
+            Email address:</br><input id="" type="text" name="SIGN-UP"/></br>
+            Password:</br><input id="" type="password" name="PWD"/></br>
+            </br>
+            <button"/" class="button login" id="sign-up-button">Login</button>
+          </form>
+        </div> <!-- input -->
+        <div id="log-in">
+          <p>Get started - It's free!
+          <button"/" id="last-button">Sign-Up</button></p>
+        </div> <!-- log-in -->
+      </div> <!--sign-in & flipbox-->
+    </div> <!-- flipbox-container -->
+
+    <div class="inner-image flipbox" id="strip">
+      <img src="<%= @images_array[0][:image_url] %>" />
+      <img src="<%= @images_array[1][:image_url] %>" />
+      <img src="<%= @images_array[2][:image_url] %>" />
+      <img src="<%= @images_array[3][:image_url] %>" />
+      <img src="<%= @images_array[4][:image_url] %>" />
+      <img src="<%= @images_array[5][:image_url] %>" />
+      <img src="<%= @images_array[6][:image_url] %>" />
+      <img src="<%= @images_array[7][:image_url] %>" />
+      <img src="<%= @images_array[8][:image_url] %>" />
+      <img src="<%= @images_array[9][:image_url] %>" />
+    </div> <!-- inner-image -->
+
+  </div> <!-- page-wrap -->
   <div class="stop" id="stop">
     <%= render 'stop' %>
-  </div>
-</div>
+  </div> <!-- stop -->
+</div> <!-- container -->
 
 <%= yield %>
 
