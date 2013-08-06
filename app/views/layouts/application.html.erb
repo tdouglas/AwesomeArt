@@ -4,6 +4,9 @@
   <title>AwesomeArt</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <script src="js/jquery.min.js"></script>
+2
+<script type="text/javascript" src="js/jquery.flippy.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -15,13 +18,32 @@
     <%= render 'navbar' %>
   </nav>
   <div class="page-wrap">
+    <div class="sign-up">
+      <h2>Museum Art.</h2><h3>When You Want It.</h3>
+      <div id="extend">
+        <h4>Sign-up to <span>save</span> your favorite artwork <span>forever</span>.</h4>
+      </div> <!-- extend -->
+      <div id="input">
+        <form id="test" action="/" method="get">
+          Email address:</br><input id="" type="text" name="SIGN-UP"/></br>
+          Password:</br><input id="" type="password" name="PWD"/></br>
+          Confirm Password:</br><input id="" type="password" name="SIGN-UP"/></br>
+          </br>
+          <button"/" id="sign-up-button">Get started - it's free!</button>
+        </form>
+      </div> <!-- input -->
+      <div id="log-in">
+        <p>Already have an account?
+          <button"/" id="log-in-button">Login</button></p>
+      </div> <!-- log-in -->
+    </div> <!-- sign-up-->
     <div class="inner-image" id="strip">
-    </div>
-  </div>
+    </div> <!-- inner-mage -->
+  </div> <!-- page-wrap -->
   <div class="stop" id="stop">
     <%= render 'stop' %>
-  </div>
-</div>
+  </div> <!-- stop -->
+</div> <!-- container -->
 
 <%= yield %>
 

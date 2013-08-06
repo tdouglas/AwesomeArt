@@ -47,10 +47,20 @@ $(document.body).click(function () {
     }
   });
 
+function somefunction(){
+  $.ajax({
+    type: 'get',
+    url: '/',
+    dataType: 'script'
+  });
+}
+
 $(function(){
   $('.page-wrap').hide();
   $('.page-wrap').slideDown(2100);
   setTimeout(init, 2500);
+  // some_function()
+  // $(parent_item).on('click', 'clicked-item', somefunction)
 });
 
 /* no longer needed
@@ -177,6 +187,22 @@ $('.sign-in-up li:last').click(function() {
 
 // append sign-up div above over carousel
 $('.page-wrap').prepend('<div id="sign-up"</div>');
+
+$('.sign-up').remove();
+$('.inner-image').remove();
+
+var signUpDiv = $('.sign-up');
+
+var carouselDiv = $('.inner-image');
+
+$('.page-wrap').prepend(carouselDiv);
+$('.stop').remove();
+
+
+$('.page-wrap').prepend(signUpDiv);
+
+
+
 
 
 
