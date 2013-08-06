@@ -24,6 +24,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'bcrypt-ruby', require: 'bcrypt'
+gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git'
+
 group :development, :test do
   gem 'pry-rails'           # Causes rails console to open pry
                             # https://github.com/rweng/pry-rails

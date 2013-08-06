@@ -159,11 +159,11 @@ function next() {
 //   setInterval(startTheShow, 2000);
 // }
 
-apiImage = -1800;
+// apiImage = -1800;
 
 function stop() {
   console.log('stopping the animation');
-  $('#strip').css('-webkit-transform', 'translateX(' + apiImage + 'px)');
+  // $('#strip').css('-webkit-transform', 'translateX(' + apiImage + 'px)');
     clearInterval(myInterval);
 }
 

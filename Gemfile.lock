@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/alexdunae/validates_email_format_of.git
+  revision: 46b832f7c778cc73f45ebc84cffba03c33294928
+  specs:
+    validates_email_format_of (1.5.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -31,6 +37,7 @@ GEM
     annotate (2.5.0)
       rake
     arel (3.0.2)
+    bcrypt-ruby (3.1.1)
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -151,6 +158,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  bcrypt-ruby
   better_errors
   binding_of_caller
   coffee-rails (~> 3.2.1)
@@ -167,3 +175,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
+  validates_email_format_of!
