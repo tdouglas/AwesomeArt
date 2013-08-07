@@ -53,7 +53,12 @@ class ArtworksController < ApplicationController
     end
 
     # This gets 10 random images on page load
+<<<<<<< HEAD
     10.times { get_random_artwork }
+=======
+    2.times { get_random_artwork }
+  end
+>>>>>>> 4ca1398c5b7824216bd165f84cb8507b6b906a4f
 
 
   end
