@@ -116,6 +116,7 @@ function flipToSignUp() {
   });
 }
 
+
 function revealSignIn(e) {
   e.preventDefault();
   $('.inner-image').hide();
@@ -123,3 +124,21 @@ function revealSignIn(e) {
   $('.sign-up').hide();
   $('.sign-in').show();
 }
+
+
+function next() {
+  $('#strip').css('-webkit-transform', 'translateX(' + currentTranslation + 'px)');
+  currentTranslation -= 300;
+
+  // console.log('currentTranslation', currentTranslation);
+
+  if (currentTranslation === -slideWidth * 2) {
+    currentTranslation = 0;
+  }
+
+}
+
+
+
+
+

@@ -1,6 +1,7 @@
 $(function(){
 
   var signUpButton = $('#sign-up-button');
+  var signInButton = $('#sign-in-button');
 
   signUpButton.click(function(){
     var user = { "email": "", "password": "", "password_confirmation": "" };
@@ -13,8 +14,27 @@ $(function(){
       type: 'POST',
       dataType: 'json',
       data: user
-    }).success(
-    );
+    }).success(function(){
       $('.flipbox-container').hide();
+    });
   });
+
+  signInButton.click(function(){
+    var user = { "email": "", "password": "" };
+    user.email = $('#sign-in-email').val();
+    user.password = $('#sign-in-password').val();
+
+    $.ajax({
+      url: '/sessions',
+      type: 'POST',
+      dataType: 'json',
+      data: user
+    }).done(function(){
+      $('.flipbox-container').hide();
+      $('.inner-image').show();
+    });
+  });
+
+
+
 });
