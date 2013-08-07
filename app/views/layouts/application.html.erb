@@ -13,8 +13,11 @@
 
   <nav class="sign-in-up">
 
-
-
+    <% if current_user %>
+    <%= render 'navbar2' %>
+    <% else %>
+    <%= render 'navbar' %>
+    <% end %>
 
   </nav>
   <div class="page-wrap">
@@ -40,12 +43,13 @@
       <div class="sign-in flipbox">
         <h1>Login</h1> <h3>to your Account</h3>
         <div class="input" id="two-field">
-          <form class="test" action="/" method="get">
-            Email address:</br><input id="" type="text" name="SIGN-UP"/></br>
-            Password:</br><input id="" type="password" name="PWD"/></br>
-            </br>
-            <button"/" class="button login" id="sign-in-button">Login</button>
-          </form>
+
+
+
+
+
+
+
         </div> <!-- input -->
         <div id="log-in">
           <p>Get started - It's free!

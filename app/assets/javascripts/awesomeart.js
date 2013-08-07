@@ -349,7 +349,7 @@ $(document).ready(function(){
             elem.revertFlip();
 
             // Unsetting the flag:
-            elem.data('flipped',false)
+            elem.data('flipped',false);
         }
         else
         {
