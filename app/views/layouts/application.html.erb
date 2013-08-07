@@ -12,10 +12,11 @@
   <img id="logo" src="assets/logo-vertical.png"/>
 
   <nav class="sign-in-up">
-
-
-
-
+    <% if current_user %>
+    <%= render 'navbar2' %>
+    <% else %>
+    <%= render 'navbar' %>
+    <% end %>
   </nav>
   <div class="page-wrap">
     <div class="flipbox-container">
@@ -25,11 +26,6 @@
           <h4>Sign-up to <span>save</span> your favorite artwork <span>forever</span>.</h4>
         </div> <!-- extend -->
         <div class="input" id="sign-up-div">
-
-
-
-
-
 
         </div> <!-- input -->
         <div id="sign-in" id="three-fields">

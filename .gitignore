@@ -15,8 +15,3 @@
 /tmp
 
 
-    <% if current_user %>
-    <%= render 'navbar2' %>
-    <% else %>
-    <%= render 'navbar' %>
-    <% end %>

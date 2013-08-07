@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= awesomeart.js
-//= userauth.js
-//= require_tree .
+//= require awesomeart.js
+//= require userauth.js
+
 
