@@ -15,8 +15,8 @@ class UsersController < ApplicationController
     else
       render "new"
     end
-    respond_to do |format|
-      format.json { render :json => @user.to_json}
-    end
+    # respond_to do |format|
+    #   format.json { render :json => @user.to_json}
+    # end
   end
 end

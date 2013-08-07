@@ -5,7 +5,15 @@ class User < ActiveRecord::Base
 
   # Validations here
 
+  validates :password, confirmation: true
+  validates :password, presence: true, on: :create
+  # validates :password, length: { minimum: 6 }
+  validates :email, presence: true
+  validates :email, uniqueness: true
+  # validates :email, :email_format => { :message => 'invalid'}
+
   attr_accessible :email, :password, :password_confirmation
+
 
   has_and_belongs_to_many :artists
   has_and_belongs_to_many :artworks
