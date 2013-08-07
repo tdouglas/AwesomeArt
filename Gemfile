@@ -5,6 +5,7 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# Remember to switch to Postgres for production
 gem 'sqlite3'
 
 gem 'nokogiri'
@@ -22,6 +23,9 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
+gem 'bcrypt-ruby', require: 'bcrypt'
+gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git'
 
 group :development, :test do
   gem 'pry-rails'           # Causes rails console to open pry

@@ -11,6 +11,43 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130806194301) do
+
+  create_table "artists", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "artists_users", :id => false, :force => true do |t|
+    t.integer "artist_id"
+    t.integer "user_id"
+  end
+
+  create_table "artworks", :force => true do |t|
+    t.string   "title"
+    t.string   "date"
+    t.string   "medium"
+    t.string   "collection"
+    t.string   "image_url"
+    t.string   "museum_page_url"
+    t.integer  "image_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "artworks_users", :id => false, :force => true do |t|
+    t.integer "artwork_id"
+    t.integer "user_id"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "screenname"
+    t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
 end

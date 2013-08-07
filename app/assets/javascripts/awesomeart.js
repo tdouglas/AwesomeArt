@@ -107,7 +107,6 @@ function next() {
 }
 
 
-
 // apiImage = -1800;
 
 function stop() {
