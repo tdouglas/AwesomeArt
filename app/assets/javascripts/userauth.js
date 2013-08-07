@@ -14,9 +14,9 @@ $(function(){
       type: 'POST',
       dataType: 'json',
       data: user
+    }).success(function(){
+      $('.flipbox-container').hide();
     });
-
-    $('.flipbox-container').hide();
   });
 
   signInButton.click(function(){
@@ -29,11 +29,12 @@ $(function(){
       type: 'POST',
       dataType: 'json',
       data: user
+    }).done(function(){
+      $('.flipbox-container').hide();
+      $('.inner-image').show();
     });
   });
 
-  $('.flipbox-container').hide();
-  $('.inner-image').show();
 
 
 });
