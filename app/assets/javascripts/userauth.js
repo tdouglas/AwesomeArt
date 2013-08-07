@@ -13,6 +13,8 @@ $(function(){
       type: 'POST',
       dataType: 'json',
       data: user
-    });
+    }).success(
+    );
+      $('.flipbox-container').hide();
   });
 });

@@ -4,5 +4,5 @@ AwesomeArt::Application.routes.draw do
   get '/users/new' => 'users#new'
   post '/users' => 'users#create'
   post '/sessions' => 'sessions#create'
-  delete '/sessions' => 'sessions#destroy'
+  get '/log_out' => 'sessions#destroy', as: "log_out"
 end
