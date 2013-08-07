@@ -1,72 +1,51 @@
-
-// zoom in on div
-$('.page-wrap').on('click',function(){
-  var step = 2;
-  currIEZoom += step;
-  $('.page-wrap').css('zoom', ' ' + currIEZoom + '%');
-});
-
-hide = $('.page-wrap').hide();
-show = $('.page-wrap').show();
-
-// slide down
-$(document.body).hover(function () {
-  if ($('.page-wrap').is(":hidden")) {
-  $('.page-wrap').slideDown("slow");
-  } else {
-  $('.page-wrap').hide();
-  }
-});
-
-$(document.body).click(function () {
-  $('.page-wrap').slideDown("slow");
-});
-
-// slide up
-  $(document.body).hover(function () {
-    if ($("div:first").is(":hidden")) {
-      $("div").show("slow");
-    } else {
-      $("div").slideUp();
-    }
-  });
-
-function somefunction(){
-  $.ajax({
-    type: 'get',
-    url: '/',
-    dataType: 'script'
-  });
-}
-
 $(function(){
   $('.page-wrap').hide();
+  $('.flipbox-container').hide();
   $('.page-wrap').slideDown(2100);
   setTimeout(init, 2500);
-  // some_function()
-  // $(parent_item).on('click', 'clicked-item', somefunction)
+
 });
 
-/* no longer needed
-$('.page-wrap').prepend('<img src="assets/bg14.jpg" />');
-$('img').each(function(){
-  if ($(this).width() > $(this).height()){
-        $(this).addClass('inner-image');
-  } else {
-        $(this).addClass('inner-image');
-  }
+function init() {
+  $('.flipbox-container').hide();
+  $('#strip').css('webkit-transition', '-webkit-transform 1200ms');
+  $('#stop').click(function() {
+    stop();
 });
 
-function fitImagetoContainer() {
-  $("img").each(function(i) {
-     $(this).width($(this).parent().width());
-  });
+  $(".flipbox").flippy({
+    color_target: "black",
+    duration: "500"
+});
+  $(".flipbox").flippyReverse();
+  $('#log-in-button').click(function() {
+    flipToLogIn();
+});
+  $('#last-button').click(function() {
+    flipToSignUp();
+});
+
+  myInterval = setInterval(next, 1200);
 }
-$(window).resize(function() {
-   fitImagetoContainer();
+
+$('.sign-in-up li:last').click(function() {
+  $('.inner-image').hide();
+  $(".flipbox").flippyReverse();
+  $('.flipbox-container').show();
+  $('.sign-up').hide();
+  $('.sign-in').show();
 });
 
-*/
+$('.sign-in-up li:first').click(function() {
+  $('.inner-image').hide();
+  $(".flipbox").flippyReverse();
+  $(".flipbox").flippyReverse();
+  $('.flipbox-container').show();
+  $('.sign-in').hide();
+  $('.sign-up').show();
+});
+
+
 
 // can this be a function that pulls photos from assets folder directl
 // var imageArray = [
@@ -88,13 +67,7 @@ $(window).resize(function() {
 
 var imageArray = [];
 
-function parse() {
 
-for (var i = 0; i < imageArray.length; i++) {
-   $.parseHTML(imageArray[i]);
-   imageArray[i].append('.inner-image');
-  }
-}
 
 
 
@@ -120,50 +93,26 @@ var currentTranslation = -slideWidth;
 var myInterval;
 
 
-function init() {
-  $('.flipbox-container').hide();
-
-  // $('.inner-image').append(imageArray);
-
-  $('#strip').css('webkit-transition', '-webkit-transform 1200ms');
-  $('#stop').click(function() {
-    stop();
-  });
-
-  // $('.sign-in-up li:last').click(function() {
-  // xyz();
-  // console.log("clicked");
-  // });
-
-  myInterval = setInterval(next, 1200);
-}
 
 function next() {
   $('#strip').css('-webkit-transform', 'translateX(' + currentTranslation + 'px)');
   currentTranslation -= 300;
 
-  console.log('currentTranslation', currentTranslation);
+  // console.log('currentTranslation', currentTranslation);
 
-  if (currentTranslation === -slideWidth * 10) {
+  if (currentTranslation === -slideWidth * 2) {
     currentTranslation = 0;
   }
 
 }
 
-// function getArray() {
-//   for (var i = 0; i < imageArray.length; i++) {
-//     console.log(imageArray[i]);
-//       // $('.inner-image').append(imageArray);
-//     // imageArray.src = ary[i].media.m;
-//   }
-//   setInterval(startTheShow, 2000);
-// }
 
-apiImage = -1800;
+
+// apiImage = -1800;
 
 function stop() {
   console.log('stopping the animation');
-  $('#strip').css('-webkit-transform', 'translateX(' + apiImage + 'px)');
+  // $('#strip').css('-webkit-transform', 'translateX(' + apiImage + 'px)');
     clearInterval(myInterval);
 }
 
@@ -189,6 +138,44 @@ $('.stop').remove();
 $('.page-wrap').prepend(signUpDiv);
 
 
+var signUpDiv;
+
+var carouselDiv = $('.inner-image');
+
+
+signUpDiv = $('.sign-up');
+signUpDiv.remove();
+$('.flipbox-container').prepend(signUpDiv);
+
+// if they click, sign-up
+$('.flipbox-container').show();
+
+// flippidy (from sign-up)
+$(".flipbox").flippy({
+    recto: $('.sign-in'),
+    duration: "500"
+});
+
+$(".flipbox").flippyReverse();
+
+// if they click, sign-in
+$('.flipbox-container').show();
+$('.sign-up').hide();
+
+// flippidy (from sign-in)
+
+$(".flipbox").flippyReverse();
+
+
+
+// color_target : The targeted background color. (ex.: ‘aliceblue’, ‘#f0f8ff’ or rgba(33,133,197,.3) | default: ‘white’)
+// recto : The content to show after a revert() action (default : the original content)
+// verso : The content to show after the flip effect
+// direction : The direction of the flip effect (‘RIGHT’, ‘LEFT’, ‘BOTTOM’, ‘TOP’ | default : ‘LEFT’)
+// duration : How long the flip effect is during in ms (default : 300)
+// depth : You can adjust the perspective effect (default : 0.12)
+// light : You can adjust light and shadow intensity (default : 60)
+// noCSS : You can force Flippy to NOT use CSS3 properties even if the browser support it (default : false)
 
 
 
@@ -200,4 +187,190 @@ $('.page-wrap').prepend(signUpDiv);
 
 
 
+// no longer needed
+// $('.page-wrap').prepend('<img src="assets/bg14.jpg" />');
+// $('img').each(function(){
+//   if ($(this).width() > $(this).height()){
+//         $(this).addClass('inner-image');
+//   } else {
+//         $(this).addClass('inner-image');
+//   }
+// });
 
+// // zoom in on div
+// $('.page-wrap').on('click',function(){
+//   var step = 2;
+//   currIEZoom += step;
+//   $('.page-wrap').css('zoom', ' ' + currIEZoom + '%');
+// });
+
+// hide = $('.page-wrap').hide();
+// show = $('.page-wrap').show();
+
+// // slide down
+// $(document.body).hover(function () {
+//   if ($('.page-wrap').is(":hidden")) {
+//   $('.page-wrap').slideDown("slow");
+//   } else {
+//   $('.page-wrap').hide();
+//   }
+// });
+
+// $(document.body).click(function () {
+//   $('.page-wrap').slideDown("slow");
+// });
+
+// // slide up
+//   $(document.body).hover(function () {
+//     if ($("div:first").is(":hidden")) {
+//       $("div").show("slow");
+//     } else {
+//       $("div").slideUp();
+//     }
+//   });
+
+// function somefunction(){
+//   $.ajax({
+//     type: 'get',
+//     url: '/',
+//     dataType: 'script'
+//   });
+// }
+
+// function parse() {
+
+// for (var i = 0; i < imageArray.length; i++) {
+//    $.parseHTML(imageArray[i]);
+//    imageArray[i].append('.inner-image');
+//   }
+// }
+
+
+$('.inner-image').hide();
+$('.sign-in').hide();
+$('.flipbox-container').show();
+
+
+$(".flipbox").flippy({
+    recto: $('.sign-in'),
+    duration: "500",
+    onFinish: function(){
+      $('.sign-up').hide();
+      $('.sign-in').show();
+    }
+ });
+
+$(".flipbox").flippy({
+    recto: $('.sign-in'),
+    duration: "500"
+});
+$('.flipbox-container').hide();
+$(".flipbox").flippyReverse();
+$('.flipbox-container').show();
+
+
+
+
+
+$(".flipbox").flippyReverse();
+
+////
+
+//images --> sign-up
+$('.inner-image').hide();
+$('.flipbox-container').show();
+//sign-up --> sign-in
+$('.sign-up').hide();
+
+$(".flipbox").flippy({
+    color_target: "black",
+    duration: "500"
+ });
+
+$('.flipbox-container').hide();
+$(".flipbox").flippyReverse();
+$('.flipbox-container').show();
+
+function flipToLogin() {
+  $('#log-in-button').click(function() {
+  $('.inner-image').hide();
+  $('.flipbox-container').hide();
+  $(".flipbox").flippyReverse();
+  $(".flipbox").flippyReverse();
+  $('.sign-up').hide();
+  $('.sign-in').show();
+  $('.flipbox-container').show();
+});
+}
+
+function flipToSignUp() {
+  $('#last-button').click(function() {
+  $('.inner-image').hide();
+  $('.flipbox-container').hide();
+  $(".flipbox").flippyReverse();
+  $(".flipbox").flippyReverse();
+  $('.sign-in').hide();
+  $('.sign-up').show();
+  $('.flipbox-container').show();
+});
+}
+
+
+function next() {
+  $('#strip').css('-webkit-transform', 'translateX(' + currentTranslation + 'px)');
+  currentTranslation -= 300;
+
+  // console.log('currentTranslation', currentTranslation);
+
+  if (currentTranslation === -slideWidth * 2) {
+    currentTranslation = 0;
+  }
+
+}
+
+
+
+
+
+$(document).ready(function(){
+
+    $('.flipbox-container').bind("click",function(){
+
+        // $(this) point to the clicked .sponsorFlip element (caching it in elem for speed):
+
+        var elem = $(this);
+
+        // data('flipped') is a flag we set when we flip the element:
+
+        if(elem.data('flipped'))
+        {
+            // If the element has already been flipped, use the revertFlip method
+            // defined by the plug-in to revert to the default state automatically:
+
+            elem.revertFlip();
+
+            // Unsetting the flag:
+            elem.data('flipped',false)
+        }
+        else
+        {
+            // Using the flip method defined by the plugin:
+
+            elem.flip({
+                direction:'lr',
+                speed: 350,
+                onBefore: function(){
+                    // Insert the contents of the .sponsorData div (hidden
+                    // from view with display:none) into the clicked
+                    // .sponsorFlip div before the flipping animation starts:
+
+                    elem.html(elem.siblings('.sponsorData').html());
+                }
+            });
+
+            // Setting the flag:
+            elem.data('flipped',true);
+        }
+    });
+
+});

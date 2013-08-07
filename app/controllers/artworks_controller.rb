@@ -53,7 +53,7 @@ class ArtworksController < ApplicationController
     end
 
     # This gets 10 random images on page load
-    10.times { get_random_artwork }
+    2.times { get_random_artwork }
   end
 
   def sign_in

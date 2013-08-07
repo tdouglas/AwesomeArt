@@ -12,7 +12,10 @@
   <img id="logo" src="assets/logo-vertical.png"/>
 
   <nav class="sign-in-up">
-    <%= render 'navbar' %>
+
+
+
+
   </nav>
   <div class="page-wrap">
     <div class="flipbox-container">
@@ -33,7 +36,7 @@
         <div id="sign-in" id="three-fields">
           <p>Already have an account?
             <button"/" id="log-in-button">Login</button></p>
-        </div> <!-- log-in -->
+        </div> <!-- sign-in -->
       </div> <!-- sign-up & flipbox-->
       <div class="sign-in flipbox">
         <h1>Login</h1> <h3>to your Account</h3>
@@ -42,7 +45,7 @@
             Email address:</br><input id="" type="text" name="SIGN-UP"/></br>
             Password:</br><input id="" type="password" name="PWD"/></br>
             </br>
-            <button"/" class="button login" id="sign-up-button">Login</button>
+            <button"/" class="button login" id="sign-in-button">Login</button>
           </form>
         </div> <!-- input -->
         <div id="log-in">
@@ -52,17 +55,10 @@
       </div> <!--sign-in & flipbox-->
     </div> <!-- flipbox-container -->
 
-    <div class="inner-image flipbox" id="strip">
+    <div class="inner-image" id="strip">
       <img src="<%= @images_array[0][:image_url] %>" />
       <img src="<%= @images_array[1][:image_url] %>" />
-      <img src="<%= @images_array[2][:image_url] %>" />
-      <img src="<%= @images_array[3][:image_url] %>" />
-      <img src="<%= @images_array[4][:image_url] %>" />
-      <img src="<%= @images_array[5][:image_url] %>" />
-      <img src="<%= @images_array[6][:image_url] %>" />
-      <img src="<%= @images_array[7][:image_url] %>" />
-      <img src="<%= @images_array[8][:image_url] %>" />
-      <img src="<%= @images_array[9][:image_url] %>" />
+
     </div> <!-- inner-image -->
 
   </div> <!-- page-wrap -->
