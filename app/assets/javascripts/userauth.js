@@ -16,6 +16,8 @@ $(function(){
       data: user
     }).success(function(){
       $('.flipbox-container').hide();
+      $('#signed-out-navbar').detach();
+      $('.sign-in-up').appendTo('#signed-in-navbar');
     });
   });
 
@@ -29,12 +31,13 @@ $(function(){
       type: 'POST',
       dataType: 'json',
       data: user
-    }).done(function(){
+    }).done(function(result){
+      alert("success");
       $('.flipbox-container').hide();
       $('.inner-image').show();
+    }).success(function(){
+      $('#signed-out-navbar').detach();
+      $('.sign-in-up').appendTo('#signed-in-navbar');
     });
   });
-
-
-
 });
