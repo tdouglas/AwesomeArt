@@ -38,10 +38,9 @@ height: 420px;
 background: white;
 }
 
-#sign-up {
+.sign-up {
 position: relative;
-width: 300px;
-height: 420px;
+width: 93%;
 background: white;
 }
 
@@ -192,12 +191,12 @@ input {
 }
 
 #sign-up-button {
-  margin: 82px;
-  padding: 6px 12px;
+  padding: 6px;
+  width: 94px;
 }
 
 #sign-in-button {
-  margin: 47px;
+  margin: 7px;
   padding: 6px 45px;
 }
 
@@ -292,6 +291,14 @@ h4 {
   bottom: 2px;
 }
 
+#sib {
+margin: 7px 0px 0px 93px;
+}
+
+#sub {
+
+}
+
 .flipbox-container {
   position: relative;
 }
@@ -316,6 +323,33 @@ h4 {
   position: relative;
 }
 
+li {
+  text-decoration: none;
+}
+
+.art-info {
+  position: fixed;
+  right: 11px;
+  top: 132px;
+  width: 300px;
+  height: auto;
+  background-color: silver;
+}
+
+.table-type {
+  font-family: "Crafty Girls", Helvetica, sans-serif;;
+  color: red;
+}
+
+.table-info {
+  padding-left: 10px;
+  font-size: 11px;
+}
+
+
+td, th {
+  border: solid 1px black;
+}
 
 /*body {
 -webkit-transition: -webkit-transform 2s ease-in-out;

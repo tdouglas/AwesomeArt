@@ -1,0 +1,67 @@
+<div class="art-info">
+
+<table class="info">
+    <thead class="cell-header">
+    </thead>
+    <tbody class="cell-content">
+      <tr>
+        <td class="table-type">Title:</td>
+        <td class="table-info"><%= @images_array[0][:title] %></td>
+      </tr>
+      <tr>
+        <td class="table-type">Artist:</td>
+        <td class="table-info"><%= @images_array[0][:artist] %></td>
+      </tr>
+      <tr>
+        <td class="table-type">Medium:</td>
+        <td class="table-info"><%= @images_array[0][:medium] %></td>
+      </tr>
+      <tr>
+        <td class="table-type">Collection:</td>
+        <td class="table-info"><%= @images_array[0][:collection] %></td>
+      </tr>
+      <tbody>
+  </table>
+
+</div>
+
+<div class="page-wrap">
+
+    <div class="flipbox-container">
+      <div class="sign-up flipbox">
+        <h2>Museum Art.</h2><h3>When You Want It.</h3>
+        <div id="extend">
+          <h4>Sign-up to <span>save</span> your favorite artwork <span>forever</span>.</h4>
+        </div> <!-- extend -->
+        <div class="input" id="sign-up-div">
+
+        </div> <!-- input -->
+        <div id="sign-in" id="three-fields">
+          <p>Already have an account?
+            <button"/" id="log-in-button">Login</button></p>
+        </div> <!-- sign-in -->
+      </div> <!-- sign-up & flipbox-->
+      <div class="sign-in flipbox">
+        <h1>Login</h1> <h3>to your Account</h3>
+        <div class="input" id="two-field">
+
+        </div> <!-- input -->
+        <div id="log-in">
+          <p>Get started - It's free!
+          <button"/" id="last-button">Sign-Up</button></p>
+        </div> <!-- log-in -->
+      </div> <!--sign-in & flipbox-->
+    </div> <!-- flipbox-container -->
+
+    <div class="inner-image" id="strip">
+      <img src="<%= @images_array[0][:image_url] %>" />
+      <img src="<%= @images_array[1][:image_url] %>" />
+
+    </div> <!-- inner-image -->
+
+  </div> <!-- page-wrap -->
+  <div class="stop" id="stop">
+
+
+  </div> <!-- stop -->
+</div> <!-- container -->

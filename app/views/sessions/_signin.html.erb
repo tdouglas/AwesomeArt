@@ -1,5 +1,7 @@
 <%= form_tag sessions_path, :remote => true, :class => "test" do %>
   Email address:</br><%= text_field_tag :email, params[:email] %></br>
   Password:</br><%= password_field_tag :password %></br>
-  <%= submit_tag value = "Sign in", :class => "btn", :id => "sign-in-button" %>
+  <%= submit_tag value = "Sign in", :class => "button", :id => "sign-in-button sib" %>
 <% end %>
+
+ <!-- Clicking Signin twice will render the form twice!!! -->

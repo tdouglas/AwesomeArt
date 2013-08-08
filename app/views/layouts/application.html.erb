@@ -9,10 +9,10 @@
 <body>
 
 <div id="container">
-  <img id="logo" src="assets/logo-vertical.png"/>
 
+<!--   <img id="logo" src="assets/logo-vertical.png"/>
+ -->
   <nav class="sign-in-up">
-
 
     <% if current_user %>
     <%= render 'navbar2' %>
@@ -21,55 +21,14 @@
     <% end %>
 
   </nav>
-  <div class="page-wrap">
-    <div class="flipbox-container">
-      <div class="sign-up flipbox">
-        <h2>Museum Art.</h2><h3>When You Want It.</h3>
-        <div id="extend">
-          <h4>Sign-up to <span>save</span> your favorite artwork <span>forever</span>.</h4>
-        </div> <!-- extend -->
-        <div class="input" id="sign-up-div">
-
-        </div> <!-- input -->
-        <div id="sign-in" id="three-fields">
-          <p>Already have an account?
-            <button"/" id="log-in-button">Login</button></p>
-        </div> <!-- sign-in -->
-      </div> <!-- sign-up & flipbox-->
-      <div class="sign-in flipbox">
-        <h1>Login</h1> <h3>to your Account</h3>
-        <div class="input" id="two-field">
 
 
-
-
-
-
-
-        </div> <!-- input -->
-        <div id="log-in">
-          <p>Get started - It's free!
-          <button"/" id="last-button">Sign-Up</button></p>
-        </div> <!-- log-in -->
-      </div> <!--sign-in & flipbox-->
-    </div> <!-- flipbox-container -->
-
-    <div class="inner-image" id="strip">
-      <img src="<%= @images_array[0][:image_url] %>" />
-      <img src="<%= @images_array[1][:image_url] %>" />
-
-    </div> <!-- inner-image -->
-
-  </div> <!-- page-wrap -->
-  <div class="stop" id="stop">
-    <%= render 'stop' %>
-  </div> <!-- stop -->
-</div> <!-- container -->
 
 <%= yield %>
 
 </body>
 </html>
+
 
 
 
