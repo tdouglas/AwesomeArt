@@ -1,0 +1,21 @@
+alert("Woohoo!");
+if (currentTranslation === -slideWidth * 1) {
+  '<%=j render :partial => "/art_info/info0" %>'
+} else if (currentTranslation === -slideWidth * 2) {
+  '<%=j render :partial => "/art_info/info1" %>'
+} else () {
+  '<%=j render :partial => "/art_info/info2" %>'
+}
+
+
+
+function next() {
+  $('#strip').css('-webkit-transform', 'translateX(' + currentTranslation + 'px)');
+  currentTranslation -= 300;
+  // console.log('currentTranslation', currentTranslation);
+  if (currentTranslation === -slideWidth * 2) {
+    currentTranslation = 0;
+  }
+}
+
+  $('#art-info').append('<%=j render :partial => "signin" %>')

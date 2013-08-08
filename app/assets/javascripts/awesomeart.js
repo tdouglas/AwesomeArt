@@ -4,6 +4,7 @@ var carouselDiv;
 $(function(){
   $('.page-wrap').hide();
   $('.flipbox-container').hide();
+  $('.art-info').hide();
   $('.page-wrap').slideDown(2100);
   signUpDiv = $('.sign-up');
   carouselDiv = $('.inner-image');
@@ -11,7 +12,6 @@ $(function(){
 });
 
 function init() {
-  $('.flipbox-container').hide();
   $('#strip').css('webkit-transition', '-webkit-transform 1200ms');
   $('#stop').click(function() {
     stop();
@@ -47,28 +47,23 @@ var slideHeight = 420;
 var currentTranslation = -slideWidth;
 var myInterval;
 
-
-
 function next() {
   $('#strip').css('-webkit-transform', 'translateX(' + currentTranslation + 'px)');
   currentTranslation -= 300;
-
   // console.log('currentTranslation', currentTranslation);
-
   if (currentTranslation === -slideWidth * 2) {
     currentTranslation = 0;
   }
-
 }
-
 
 function stop() {
-  console.log('stopping the animation');
   // $('#strip').css('-webkit-transform', 'translateX(' + apiImage + 'px)');
-  clearInterval(myInterval);
+  $('.art-info').show();
+   $('.art-info').animate({ width: "30%" }, {queue: false, duration: 2000});
+   $('.art-info').animate({ fontSize: "14px" }, 1000 );
+   $('.art-info').animate({ borderRightWidth: "15px" }, 1000 );
+  // clearInterval(myInterval);
 }
-
-
 
 
 // $('.inner-image').hide();
@@ -93,32 +88,6 @@ function stop() {
 // $(".flipbox").flippyReverse();
 // $('.flipbox-container').show();
 
-
-function flipToLogin() {
-  $('#log-in-button').click(function() {
-    $('.inner-image').hide();
-    $('.flipbox-container').hide();
-    $(".flipbox").flippyReverse();
-    $(".flipbox").flippyReverse();
-    $('.sign-up').hide();
-    $('.sign-in').show();
-    $('.flipbox-container').show();
-  });
-}
-
-function flipToSignUp() {
-  $('#last-button').click(function() {
-    $('.inner-image').hide();
-    $('.flipbox-container').hide();
-    $(".flipbox").flippyReverse();
-    $(".flipbox").flippyReverse();
-    $('.sign-in').hide();
-    $('.sign-up').show();
-    $('.flipbox-container').show();
-  });
-}
-
-
 function revealSignIn(e) {
   e.preventDefault();
   $('.inner-image').hide();
@@ -128,17 +97,6 @@ function revealSignIn(e) {
 }
 
 
-function next() {
-  $('#strip').css('-webkit-transform', 'translateX(' + currentTranslation + 'px)');
-  currentTranslation -= 300;
-
-  // console.log('currentTranslation', currentTranslation);
-
-  if (currentTranslation === -slideWidth * 2) {
-    currentTranslation = 0;
-  }
-
-}
 
 
 

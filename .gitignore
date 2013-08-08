@@ -14,7 +14,35 @@
 /log/*.log
 /tmp
 
-<<<<<<< HEAD
+  <%= render '..application/stop' %>
+ << artwork %>
+  <% end %>
 
-=======
->>>>>>> 0d4a5b78d88685dc0d7705e71502db2cccd4a10c
+    <% array = [] %>
+  <% artwork = {} %>
+
+  <% @images_array.each do |info| %>
+    <% t = info[:title] %></br>
+    <% a = info[:artist] %></br>
+    <% m = info[:medium] %></br>
+    <% c = info[:collection] %></br>
+    <% artwork[:title] = t %>
+    <% artwork[:artist] = a %>
+    <% artwork[:medium] = m %>
+    <% artwork[:collection] = c %>
+    <% array << artwork %>
+    <%= array.class %>
+  <% end %>
+
+  <% @images_array.each do |info| %>
+    Title: <%= info[:title] %></br>
+    Artist: <%= info[:artist] %></br>
+    Medium: <%= info[:medium] %></br>
+    Collection: <%= info[:collection] %></br>
+  <% end %>
+
+
+ Title: <p><%= @images_array[0][:title] %></p>
+ Artist: <%= @images_array[0][:artist] %>
+ Medium: <%= @images_array[0][:medium] %>
+ Collection: <%= @images_array[0][:collection] %>
