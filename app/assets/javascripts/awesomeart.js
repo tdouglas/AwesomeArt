@@ -44,12 +44,16 @@ var slideWidth = 300;
 var slideHeight = 420;
 var currentTranslation = -slideWidth;
 var myInterval;
+var imageIndex = 0;
 
 function next() {
   $('#strip').css('-webkit-transform', 'translateX(' + currentTranslation + 'px)');
   currentTranslation -= 300;
+  imageIndex += 1;
   // console.log('currentTranslation', currentTranslation);
-  if (currentTranslation === -slideWidth * 2) {
+  // console.log('imageIndex', imageIndex);
+  if (currentTranslation === -slideWidth * 10) {
+    imageIndex = -1;
     currentTranslation = 0;
   }
 }
@@ -60,7 +64,14 @@ function stop() {
    $('.art-info').animate({ width: "30%" }, {queue: false, duration: 2000});
    $('.art-info').animate({ fontSize: "14px" }, 1000 );
    $('.art-info').animate({ borderRightWidth: "15px" }, 1000 );
-  // clearInterval(myInterval);
+  position();
+  // what image am i stopping on?
+}
+
+function position() {
+  console.log(currentTranslation);
+  console.log(imageIndex);
+clearInterval(myInterval);
 }
 
 
