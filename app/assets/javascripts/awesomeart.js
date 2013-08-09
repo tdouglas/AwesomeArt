@@ -30,6 +30,7 @@ function appendImages() {
 
 function setUpPage() {
   $('.page-wrap').hide();
+  $('.page-wrap').hide();
   $('.flipbox-container').hide();
   $('.art-info').hide();
   $('.page-wrap').slideDown(2100);
@@ -115,16 +116,6 @@ function position() {
   // clearInterval(myInterval);
 }
 
-function successfulSignInUp() {
-  $('.flipbox-container').fadeOut(500);
-  $('.inner-image').fadeIn(2000);
-  $('#signed-out-navbar li').detach();
-  $('#signed-out-navbar').append('<li></li>');
-}
-
-function unsuccessfulSignInUp() {
-  $('#sign-up-div').prepend('<p>Invalid email or password</p>');
-}
 
 // $('.inner-image').hide();
 // $('.sign-in').hide();
