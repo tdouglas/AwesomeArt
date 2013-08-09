@@ -1,7 +1,34 @@
 var signUpDiv;
 var carouselDiv;
+var artworkData;
 
 $(function(){
+  loadArtworkData();
+});
+
+function loadArtworkData() {
+  $.ajax({
+   url: '/art_data',
+   dataType: 'json'
+}).done(function(data){
+  console.log(data);
+  artworkData = data;
+  console.log(artworkData.data[imageIndex].title);
+  appendImages();
+  setUpPage();
+});
+}
+
+function appendImages() {
+  images = '';
+  $.each(artworkData.data, function(index, imageInfo) {
+  images += "<img src='" + imageInfo.image_url + "'></img>";
+});
+  $('.inner-image').append(images);
+}
+
+
+function setUpPage() {
   $('.page-wrap').hide();
   $('.flipbox-container').hide();
   $('.art-info').hide();
@@ -9,7 +36,7 @@ $(function(){
   signUpDiv = $('.sign-up');
   carouselDiv = $('.inner-image');
   setTimeout(init, 2500); // postponing init until the box falls
-});
+}
 
 function init() {
   $('#strip').css('webkit-transition', '-webkit-transform 1200ms');
@@ -46,12 +73,17 @@ var slideWidth = 300;
 var slideHeight = 420;
 var currentTranslation = -slideWidth;
 var myInterval;
+var imageIndex = 0;
+var numOfImages = 2;
 
 function next() {
   $('#strip').css('-webkit-transform', 'translateX(' + currentTranslation + 'px)');
   currentTranslation -= 300;
+  imageIndex += 1;
   // console.log('currentTranslation', currentTranslation);
-  if (currentTranslation === -slideWidth * 2) {
+  // console.log('imageIndex', imageIndex);
+  if (currentTranslation === -slideWidth * numOfImages) {
+    imageIndex = -1;
     currentTranslation = 0;
   }
 }
@@ -62,6 +94,24 @@ function stop() {
    $('.art-info').animate({ width: "30%" }, {queue: false, duration: 2000});
    $('.art-info').animate({ fontSize: "14px" }, 1000 );
    $('.art-info').animate({ borderRightWidth: "15px" }, 1000 );
+  position();
+  // what image am i stopping on?
+}
+
+function position() {
+  index = imageIndex;
+  if (index == -1) {
+    index = numOfImages - 1;
+  }
+  $('#artwork-title').html(artworkData.data[index].title);
+  $('#artwork-artist').html(artworkData.data[index].artist);
+  $('#artwork-medium').html(artworkData.data[index].medium);
+  $('#artwork-date').html(artworkData.data[index].date);
+  $('#artwork-collection').html(artworkData.data[index].collection);
+  $('#artwork-link').attr('src', artworkData.data[index].link);
+  console.log('animation stopped');
+  console.log(currentTranslation);
+  console.log(index);
   // clearInterval(myInterval);
 }
 
@@ -95,9 +145,6 @@ function revealSignIn(e) {
   $('.sign-up').hide();
   $('.sign-in').show();
 }
-
-
-
 
 
 
