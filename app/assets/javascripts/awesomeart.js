@@ -30,6 +30,7 @@ function appendImages() {
 
 function setUpPage() {
   $('.page-wrap').hide();
+  $('.page-wrap').hide();
   $('.flipbox-container').hide();
   $('.art-info').hide();
   $('.page-wrap').slideDown(2100);
