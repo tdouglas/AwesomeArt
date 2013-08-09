@@ -1,31 +1,32 @@
 <div class="art-info">
 
+
 <table class="info">
     <thead class="cell-header">
     </thead>
     <tbody class="cell-content">
       <tr>
         <td class="table-type">Title:</td>
-        <td class="table-info"><%= @images_array[0][:title] %></td>
+        <td class="table-info" id="artwork-title"></td>
       </tr>
       <tr>
         <td class="table-type">Artist:</td>
-        <td class="table-info"><%= @images_array[0][:artist] %></td>
+        <td class="table-info" id="artwork-artist"></td>
       </tr>
       <tr>
         <td class="table-type">Medium:</td>
-        <td class="table-info"><%= @images_array[0][:medium] %></td>
+        <td class="table-info" id="artwork-medium"></td>
       </tr>
       <tr>
         <td class="table-type">Collection:</td>
-        <td class="table-info"><%= @images_array[0][:collection] %></td>
+        <td class="table-info" id="artwork-collection"></td>
       </tr>
       <tr>
         <td class="table-type">Date:</td>
-        <td class="table-info"><%= @images_array[0][:date] %></td>
+        <td class="table-info" id="artwork-date"></td>
       </tr>
       <tr>
-        <td class="table-info"><a href='<%= @images_array[0][:link] %>' target="_blank">Find me at the Brooklyn Museum!</a></td>
+        <td class="table-info"><a href='' target="_blank" id="artwork-link">Find me at the Brooklyn Museum!</a></td>
       </tr>
       <tbody>
   </table>
@@ -35,6 +36,11 @@
 <div class="page-wrap">
 
     <div class="flipbox-container">
+      <div class="start inner-box">
+
+        <img id="logo" src="assets/logo-vertical.png"/>
+
+      </div>
       <div class="sign-up flipbox">
         <h2>Museum Art.</h2><h3>When You Want It.</h3>
         <div id="extend">
@@ -61,8 +67,7 @@
     </div> <!-- flipbox-container -->
 
     <div class="inner-image" id="strip">
-      <img src="<%= @images_array[0][:image_url] %>" />
-      <img src="<%= @images_array[1][:image_url] %>" />
+
 
     </div> <!-- inner-image -->
 
