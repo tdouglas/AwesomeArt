@@ -8,18 +8,6 @@ html {
   background-size: cover;
 }
 
-/*.page-wrap {
-width: 104px;
-height: 172px;
-margin: 148px 314px 148px 315px;
-padding: 21px;
-background: white;
--moz-box-shadow: 0 0 20px black;
--webkit-box-shadow: 0 0 20px black;
-box-shadow: 0 0 20px black;
-overflow: hidden;
-}*/
-
 .page-wrap {
   width: 300px;
   height: 420px;
@@ -55,6 +43,10 @@ img {
   width: 300px;
   height: 420px;
   overflow: hidden;
+}
+
+#logo {
+  width: 49px;
 }
 
 #logo {
@@ -151,6 +143,13 @@ img {
   padding-bottom: 40px;
 }
 
+#stop h1{
+  font-family: Julius Sans One;
+  font-size: 32px;
+  border-width: 2px;
+
+}
+
 .input {
   font-family: Times;
   font-size: 13px;
@@ -232,9 +231,23 @@ h4 {
   color: #6cd623;
 }
 
+h5 {
+  position: relative;
+  font-size: 31px;
+  text-indent: -12px;
+  font-family: 'Petit Formal Script';
+}
+
+#find-fave {
+  font-family: 'Calibri', sans-serif;
+  padding: 200px 20px 0 30px;
+  font-size: 22px;
+  color: #6d87b4;
+}
+
 #sign-in p {
   position: relative;
-  bottom: -30px;
+  bottom: -20px;
   right: 8px;
   font-size: 11px;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
@@ -252,9 +265,7 @@ h4 {
   text-indent: 70px;
 }
 
-#log-in-button {
-  display: inline;
-  position: relative;
+.major-button {
   -webkit-user-select: none;
   -moz-user-select: none;
   color: white;
@@ -276,6 +287,16 @@ h4 {
   overflow: visible;
   text-decoration: none;
   right: -30px;
+}
+
+#love-it {
+  display: inline;
+  position: relative;
+}
+
+#leave-it{
+  display: inline;
+  position: relative;
 }
 
 #last-button {
@@ -358,6 +379,24 @@ li {
 .table-info {
   padding-left: 10px;
   font-size: 11px;
+}
+
+.fave-buttons {
+  text-shadow: rgba(12,12,12,0.4) 0 -1px;
+  border-width: 0;
+  border-radius: 3px;
+  background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#ee6767),color-stop(100%,#c83b3a));
+  background-image: -webkit-linear-gradient(#ee6767,#c83b3a);
+  background-image: -moz-linear-gradient(#ee6767,#c83b3a);
+  background-image: linear-gradient(#ee6767,#c83b3a);
+  font-size: 14px;
+  font-weight: 500;
+  font-size: 11px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  overflow: visible;
+  text-decoration: none;
 }
 
 .info {
