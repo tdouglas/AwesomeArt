@@ -1,0 +1,53 @@
+$('.test').on("ajax:success", function(data) {
+  <% if @user %>
+    $('.flipbox-container').hide();
+    $('.inner-image').show();
+    $('#signed-out-navbar li').detach();
+    $('#signed-out-navbar').append('<li></li>')
+    $('#signed-out-navbar li').html('<%= link_to "Log out", log_out_path %>')
+  <% else %>
+    $('#two-field').prepend('<p>Invalid email or password</p>');
+  <% end %>
+});
+
+// // alert("alert");
+
+// // var signInButton = $('#sign-in-button');
+
+// // signInButton.click(function(){
+// //   alert("SIGN IN METHOD ALERT");
+// //   signIn();
+// // });
+
+
+// // $(function(){
+//   // signInButton.click(function(){
+//   //   alert("SIGN IN METHOD ALERT");
+//   //   signIn();
+//   // });
+// // });
+
+
+// signIn();
+
+// function signIn(event) {
+//   alert("in sign in");
+//   // alert("something");
+//   var user = { "email": "", "password": "" };
+//   user.email = $('#sign-in-email').val();
+//   user.password = $('#sign-in-password').val();
+
+//   console.log(user);
+
+//   $.ajax({
+//     url: '/sessions',
+//     type: 'POST',
+//     dataType: 'json',
+//     data: user
+//   }).done(function(result){
+//     alert("success");
+//     $('.flipbox-container').hide();
+//     $('.inner-image').show();
+//     event.preventDefault();
+//   });
+// }

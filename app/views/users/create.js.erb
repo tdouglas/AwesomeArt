@@ -1,0 +1,13 @@
+  alert("grinch")
+$('.test').on("ajax:success", function(data) {
+  <% if @user.save %>
+    $('.flipbox-container').hide();
+    $('.inner-image').show();
+    $('#signed-out-navbar li').detach();
+    $('#signed-out-navbar').append('<li></li>')
+    $('#signed-out-navbar li').html('<%= link_to "Log out", log_out_path %>')
+  <% else %>
+    alert("ALERT")
+    $('#sign-up-div').prepend('<p>Invalid email or password</p>');
+  <% end %>
+});

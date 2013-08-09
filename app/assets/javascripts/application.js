@@ -14,5 +14,3 @@
 //= require jquery_ujs
 //= require awesomeart.js
 //= require userauth.js
-
-

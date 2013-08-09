@@ -28,7 +28,7 @@ function init() {
     $('.flipbox-container').show();
     $('.sign-up').hide();
     $('.sign-in').show();
-    $('#signed-out-navbar li:last').detach();
+    // $('#signed-out-navbar li:last').detach();
   });
   $('#sign-in-nav').click(revealSignIn);
   $('.sign-in-up li:first').click(function() {
@@ -36,7 +36,7 @@ function init() {
     $('.flipbox-container').show();
     $('.sign-in').hide();
     $('.sign-up').show();
-    $('#signed-out-navbar li:first').detach();
+    // $('#signed-out-navbar li:first').detach();
   });
 }
 
