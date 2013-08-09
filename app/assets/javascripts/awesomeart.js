@@ -116,16 +116,6 @@ function position() {
   // clearInterval(myInterval);
 }
 
-function successfulSignInUp() {
-  $('.flipbox-container').fadeOut(500);
-  $('.inner-image').fadeIn(2000);
-  $('#signed-out-navbar li').detach();
-  $('#signed-out-navbar').append('<li></li>');
-}
-
-function unsuccessfulSignInUp() {
-  $('#sign-up-div').prepend('<p>Invalid email or password</p>');
-}
 
 // $('.inner-image').hide();
 // $('.sign-in').hide();
