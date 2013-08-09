@@ -11,5 +11,4 @@ class UsersController < ApplicationController
     @user = User.create(params[:user])
     session[:user_id] = @user.id if @user.save
   end
-
 end
