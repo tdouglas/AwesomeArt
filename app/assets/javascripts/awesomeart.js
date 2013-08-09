@@ -120,7 +120,6 @@ function successfulSignInUp() {
   $('.inner-image').fadeIn(2000);
   $('#signed-out-navbar li').detach();
   $('#signed-out-navbar').append('<li></li>');
-  $('#signed-out-navbar li').html('<%= link_to "Log out", log_out_path %>');
 }
 
 function unsuccessfulSignInUp() {
