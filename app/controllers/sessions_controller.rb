@@ -7,14 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.authenticate(params[:email], params[:password])
-    if @user
-      session[:user_id] = @user.id
-    else
-
-    end
-    respond_to do |format|
-      format.js {  }
-    end
+    session[:user_id] = @user.id if @user
   end
 
   def destroy
