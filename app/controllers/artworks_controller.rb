@@ -6,7 +6,7 @@ class ArtworksController < ApplicationController
 
   def artwork_array
     @images_array = []
-    10.times { @images_array << GetRandomArtwork.get_random_artwork }
+    1.times { @images_array << GetRandomArtwork.get_random_artwork }
 
     data = @images_array
     render :json => { data: data}

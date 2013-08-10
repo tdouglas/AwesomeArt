@@ -247,7 +247,7 @@ h5 {
 
 #sign-in p {
   position: relative;
-  bottom: -20px;
+  bottom: -18px;
   right: 8px;
   font-size: 11px;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
@@ -257,7 +257,7 @@ h5 {
 
 #log-in p {
   position: relative;
-  bottom: -100px;
+  bottom: -90px;
   right: 3px;
   font-size: 11px;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
@@ -410,4 +410,7 @@ td, th {
 /*body {
 -webkit-transition: -webkit-transform 2s ease-in-out;
 }
+*/
+
+/*background: url("images/btn/btn_volunteer.png") no-repeat;
 */
