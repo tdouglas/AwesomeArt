@@ -42,5 +42,3 @@ class ArtworksController < ApplicationController
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 end
-
-#define a method and call it twice
