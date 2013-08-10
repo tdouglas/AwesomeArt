@@ -101,6 +101,13 @@ function stop() {
   // what image am i stopping on?
 }
 
+var title;
+var artist;
+var medium;
+var date;
+var collection;
+var link;
+
 function position() {
   index = imageIndex;
   if (index == -1) {
@@ -127,6 +134,8 @@ function position() {
     window.location = "/favorites";
   });
 }
+
+
 
 
 // $('.inner-image').hide();

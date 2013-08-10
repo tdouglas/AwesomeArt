@@ -11,4 +11,5 @@ AwesomeArt::Application.routes.draw do
   get '/favorites' => 'artworks#favorites'
 
   get '/art_data' => 'artworks#artwork_array'
+  get '/favorites' => 'artworks#favorites', as: 'fave'
 end
