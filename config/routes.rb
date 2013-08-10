@@ -7,6 +7,8 @@ AwesomeArt::Application.routes.draw do
   post '/sessions' => 'sessions#create'
   get '/log_out' => 'sessions#destroy', as: "log_out"
   get '/sign_in' => 'sessions#new', as: "sign_in"  #generates new session for user to sign-in
+  post '/favorite' => 'artworks#favorite', as: "favorite"
+  get '/favorites' => 'artworks#favorites'
 
   get '/art_data' => 'artworks#artwork_array'
 end

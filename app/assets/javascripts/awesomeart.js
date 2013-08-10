@@ -4,6 +4,8 @@ var artworkData;
 
 $(function(){
   loadArtworkData();
+  $('.sign-up').hide();
+  $('.art-info').hide();
 });
 
 function loadArtworkData() {
@@ -30,8 +32,8 @@ function appendImages() {
 
 function setUpPage() {
   $('.page-wrap').hide();
-  $('.page-wrap').hide();
   $('.flipbox-container').hide();
+  $('.start').show();
   $('.art-info').hide();
   $('.page-wrap').slideDown(2100);
   signUpDiv = $('.sign-up');
@@ -75,14 +77,14 @@ var slideHeight = 420;
 var currentTranslation = -slideWidth;
 var myInterval;
 var imageIndex = 0;
-var numOfImages = 2;
+var numOfImages = 10;
 
 function next() {
   $('#strip').css('-webkit-transform', 'translateX(' + currentTranslation + 'px)');
   currentTranslation -= 300;
   imageIndex += 1;
-  // console.log('currentTranslation', currentTranslation);
-  // console.log('imageIndex', imageIndex);
+  console.log('currentTranslation', currentTranslation);
+  console.log('imageIndex', imageIndex);
   if (currentTranslation === -slideWidth * numOfImages) {
     imageIndex = -1;
     currentTranslation = 0;
@@ -109,11 +111,21 @@ function position() {
   $('#artwork-medium').html(artworkData.data[index].medium);
   $('#artwork-date').html(artworkData.data[index].date);
   $('#artwork-collection').html(artworkData.data[index].collection);
-  $('#artwork-link').attr('src', artworkData.data[index].link);
+  $('#artwork-link').attr('href', artworkData.data[index].link);
   console.log('animation stopped');
   console.log(currentTranslation);
   console.log(index);
-  // clearInterval(myInterval);
+  clearInterval(myInterval);
+  $('.love-it').data(artworkData.data[index]);
+  $('.love-it').click(function(){
+    $.ajax({
+      url: '/favorite',
+      type: 'POST',
+      data: $('.love-it').data(),
+      dataType: 'json'
+    });
+    window.location = "/favorites";
+  });
 }
 
 
@@ -147,6 +159,15 @@ function revealSignIn(e) {
   $('.sign-in').show();
 }
 
+function successfulSignInUp() {
+  $('.flipbox-container').fadeOut(500);
+  $('.inner-image').fadeIn(2000);
+  $('#signed-out-navbar li').detach();
+  $('#signed-out-navbar').append('<li></li>');
+}
 
+function unsuccessfulSignInUp() {
+  $('#sign-up-div').prepend('<p>Invalid email or password</p>');
+}
 
 

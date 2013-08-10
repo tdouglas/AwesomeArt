@@ -2,5 +2,5 @@
   successfulSignInUp()
   $('#signed-out-navbar li').html('<%= link_to "Log out", log_out_path %>');
 <% else %>
-  unsuccessfulSignInUp()
+  $('#two-field').prepend('<p>Invalid email or password</p>');
 <% end %>

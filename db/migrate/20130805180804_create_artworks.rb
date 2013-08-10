@@ -1,6 +1,8 @@
 class CreateArtworks < ActiveRecord::Migration
   def up
     create_table :artworks do |t|
+      t.belongs_to :artist
+      t.belongs_to :user
       t.string :title
       t.string :date
       t.string :medium

@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130806194301) do
 
   create_table "artists", :force => true do |t|
+    t.integer  "user_id"
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -25,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20130806194301) do
   end
 
   create_table "artworks", :force => true do |t|
+    t.integer  "artist_id"
+    t.integer  "user_id"
     t.string   "title"
     t.string   "date"
     t.string   "medium"
