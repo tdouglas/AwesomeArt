@@ -31,7 +31,7 @@
       <tbody>
   </table>
   <div class="love-it-leave-it-buttons">
-    <button class="major-button" id="love-it">Love It</button>
+    <button class="major-button love-it">Love It</button>
     <button class="major-button" id="leave-it">Leave It</button>
   </div> <!-- love-it-leave-it-buttons -->
 </div> <!-- art-info -->
@@ -57,8 +57,8 @@
       </div> <!-- input -->
       <div id="sign-in" id="three-fields">
         <p>Already have an account?
-          <button class="major-button" id="log-in-button">Login</button></p>
-
+          <%= link_to "Log-In", log_in_path, :class => "major-button", :id => "log-in-button", remote: true %>
+        </p>
       </div> <!-- sign-in -->
     </div> <!-- sign-up & flipbox-->
     <div class="sign-in flipbox">

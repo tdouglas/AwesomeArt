@@ -113,17 +113,26 @@ function position() {
   if (index == -1) {
     index = numOfImages - 1;
   }
-  title = $('#artwork-title').html(artworkData.data[index].title);
-  artist = $('#artwork-artist').html(artworkData.data[index].artist);
-  medium = $('#artwork-medium').html(artworkData.data[index].medium);
-  date = $('#artwork-date').html(artworkData.data[index].date);
-  collection = $('#artwork-collection').html(artworkData.data[index].collection);
-  link = $('#artwork-link').attr('href', artworkData.data[index].link);
+  $('#artwork-title').html(artworkData.data[index].title);
+  $('#artwork-artist').html(artworkData.data[index].artist);
+  $('#artwork-medium').html(artworkData.data[index].medium);
+  $('#artwork-date').html(artworkData.data[index].date);
+  $('#artwork-collection').html(artworkData.data[index].collection);
+  $('#artwork-link').attr('href', artworkData.data[index].link);
   console.log('animation stopped');
   console.log(currentTranslation);
   console.log(index);
-  console.log(title, artist, medium, date, collection, link);
   clearInterval(myInterval);
+  $('.love-it').data(artworkData.data[index]);
+  $('.love-it').click(function(){
+    $.ajax({
+      url: '/favorite',
+      type: 'POST',
+      data: $('.love-it').data(),
+      dataType: 'json'
+    });
+    window.location = "/favorites";
+  });
 }
 
 

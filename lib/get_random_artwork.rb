@@ -39,7 +39,7 @@ module GetRandomArtwork
         @image_hash[:date] = @date
         @image_hash[:collection] = @collection
         @image_hash[:link] = @link
-        @image_hash[:artwork_id] = @artwork_id
+        @image_hash[:artwork_id] = @image_id
 
         @image_hash
 
