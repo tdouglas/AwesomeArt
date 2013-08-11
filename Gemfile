@@ -46,6 +46,8 @@ group :development, :test do
                             # https://github.com/dejan/rails_panel/tree/master/meta_request
   gem "rspec-rails", "~> 2.4"
 
+  gem 'jasmine'
+
 end
 
 gem 'jquery-rails'
