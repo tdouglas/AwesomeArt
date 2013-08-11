@@ -5,10 +5,10 @@ class User < ActiveRecord::Base
 
   validates :password, confirmation: true
   validates :password, presence: true, on: :create
-  # validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }
   validates :email, presence: true
   validates :email, uniqueness: true
-  # validates :email, :email_format => { :message => 'invalid'}
+  validates :email, :email_format => { :message => 'invalid'}
 
   attr_accessible :email, :password, :password_confirmation
 
