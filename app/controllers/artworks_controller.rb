@@ -21,7 +21,7 @@ class ArtworksController < ApplicationController
     @artwork.collection = params[:collection]
     @artwork.image_url = params[:image_url]
     @artwork.museum_page_url = params[:link]
-    @artwork.image_id = params[:artwork_id]
+    @artwork.image_id = params[:image_id]
     @artwork.save
 
     @artist = Artist.find_or_create_by_name(params[:artist])

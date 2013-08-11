@@ -1,10 +1,13 @@
 <% if @user %>
   successfulSignInUp()
-  $('#signed-out-navbar li').html('<%= link_to "Log out", log_out_path %>');
+  $('.sign-in-up').html('<%=j render 'navbar2'  %>');
+  $('.#love-it').attr("style: inline")
+
+// also show users name welcome across top
+
 <% else %>
-<<<<<<< HEAD
-  $('#two-field').prepend('<p>Invalid email or password</p>')
-=======
   $('#two-field').prepend('<p>Invalid email or password</p>');
->>>>>>> 8a58f303094138bbd3f370b465a37fec0a931668
 <% end %>
+
+
+

@@ -1,5 +1,26 @@
+<div class="user-faves">
 
-<h1>YES! I AM INVINCIBLE!</h1>
+  <div class="scroll">
+    <% @current_user.artworks.each do |art| %>
+        <div class="a-favorite" id="<%= art.image_id %>">
+            <img src='<%= art.image_url %>'/>
+        </div>
+    <% end %>
+  </div>
 
-<h1><%= @current_user.artworks[0].title %></h1>
-<!-- This works -->
+
+</div> <!-- user-favs -->
+
+
+<!-- <h1><%= @current_user.artworks[0].title %></h1>
+
+    <% @current_user.artworks.each do |art| %>
+    <%= art.title %></br>
+    <%= art.date %></br>
+    <%= art.medium %></br>
+    <%= art.collection %></br>
+    <img src='<%= art.image_url %>'/></br>
+    <%= art.museum_page_url %></br>
+    <%= art.image_id %></br>
+    <% end %>
+ -->
