@@ -5,7 +5,9 @@ var artworkData;
 $(function(){
   loadArtworkData();
   $('.sign-up').hide();
+  $('.sign-in').hide();
   $('.art-info').hide();
+  $('#leave-it').click(loadArtworkData);
 });
 
 function loadArtworkData() {
@@ -13,11 +15,12 @@ function loadArtworkData() {
    url: '/art_data',
    dataType: 'json'
 }).done(function(data){
-  console.log(data);
+  // console.log(data);
   artworkData = data;
   console.log(artworkData.data[imageIndex].title);
   appendImages();
   setUpPage();
+  $('#love-it').click(favScroll);
 });
 }
 
@@ -29,12 +32,13 @@ function appendImages() {
   $('.inner-image').append(images);
 }
 
-
 function setUpPage() {
-  $('.page-wrap').hide();
-  $('.flipbox-container').hide();
-  $('.start').show();
   $('.art-info').hide();
+  // $('.page-wrap').show();
+  // $('.flipbox-container').hide();
+  $('.start').hide();
+  // $('.page-wrap').hide();
+  // $('.page-wrap').show();
   $('.page-wrap').slideDown(2100);
   signUpDiv = $('.sign-up');
   carouselDiv = $('.inner-image');
@@ -42,7 +46,7 @@ function setUpPage() {
 }
 
 function init() {
-  $('#strip').css('webkit-transition', '-webkit-transform 1200ms');
+  $('.inner-image').css('webkit-transition', '-webkit-transform 1200ms');
   $('#stop').click(function() {
     stop();
   });
@@ -53,19 +57,22 @@ function init() {
     // flipToSignUp();
   });
   myInterval = setInterval(next, 1200);
-  $('.sign-in-up li:last').click(function() {
-    $('.inner-image').hide();
-    $('.flipbox-container').show();
-    $('.sign-up').hide();
-    $('.sign-in').show();
+  $('#float-sign-in').click(revealSignIn);
+  // $('#float-sign-in').click(function() {
+  //   $('.inner-image').hide();
+  //   $('.flipbox-container').show();
+  //   $('.sign-up').hide();
+  //   $('.sign-in').show();
     // $('#signed-out-navbar li:last').detach();
-  });
-  $('#sign-in-nav').click(revealSignIn);
-  $('.sign-in-up li:first').click(function() {
+  // });
+  // initally sign-up-nav  $('#float-sign-in').click(revealSignIn);
+  $('#float-sign-up').click(function() {
     $('.inner-image').hide();
     $('.flipbox-container').show();
     $('.sign-in').hide();
-    $('.sign-up').show();
+    $('.sign-up').show();   //just added
+    $('.start').hide();
+
     // $('#signed-out-navbar li:first').detach();
   });
 }
@@ -80,11 +87,11 @@ var imageIndex = 0;
 var numOfImages = 10;
 
 function next() {
-  $('#strip').css('-webkit-transform', 'translateX(' + currentTranslation + 'px)');
+  $('.inner-image').css('-webkit-transform', 'translateX(' + currentTranslation + 'px)');
   currentTranslation -= 300;
   imageIndex += 1;
-  console.log('currentTranslation', currentTranslation);
-  console.log('imageIndex', imageIndex);
+  // console.log('currentTranslation', currentTranslation);
+  // console.log('imageIndex', imageIndex);
   if (currentTranslation === -slideWidth * numOfImages) {
     imageIndex = -1;
     currentTranslation = 0;
@@ -93,10 +100,8 @@ function next() {
 
 function stop() {
   // $('#strip').css('-webkit-transform', 'translateX(' + apiImage + 'px)');
-  $('.art-info').show();
-   $('.art-info').animate({ width: "30%" }, {queue: false, duration: 2000});
-   $('.art-info').animate({ fontSize: "14px" }, 1000 );
-   $('.art-info').animate({ borderRightWidth: "15px" }, 1000 );
+  $('.stop').hide();
+  $('.art-info').slideDown("slow");
   position();
   // what image am i stopping on?
 }
@@ -119,16 +124,16 @@ function position() {
   $('#artwork-date').html(artworkData.data[index].date);
   $('#artwork-collection').html(artworkData.data[index].collection);
   $('#artwork-link').attr('href', artworkData.data[index].link);
-  console.log('animation stopped');
-  console.log(currentTranslation);
-  console.log(index);
+  // console.log('animation stopped');
+  // console.log(currentTranslation);
+  // console.log(index);
   clearInterval(myInterval);
-  $('.love-it').data(artworkData.data[index]);
-  $('.love-it').click(function(){
+  $('#love-it').data(artworkData.data[index]);
+  $('#love-it').click(function(){
     $.ajax({
       url: '/favorite',
       type: 'POST',
-      data: $('.love-it').data(),
+      data: $('#love-it').data(),
       dataType: 'json'
     });
     window.location = "/favorites";
@@ -171,12 +176,23 @@ function revealSignIn(e) {
 function successfulSignInUp() {
   $('.flipbox-container').fadeOut(500);
   $('.inner-image').fadeIn(2000);
-  $('#signed-out-navbar li').detach();
-  $('#signed-out-navbar').append('<li></li>');
+  $('.signed-out-navbar').detach();
+  $('.sign-in-up').append();
 }
 
 function unsuccessfulSignInUp() {
   $('#sign-up-div').prepend('<p>Invalid email or password</p>');
 }
 
+function favScroll() {
+  $('.scroll').css('-webkit-transform', 'translateX(' + currentTranslation + 'px)');
+  currentTranslation -= 300;
+  imageIndex += 1;
+  console.log('currentTranslation', currentTranslation);
+  console.log('imageIndex', imageIndex);
+  if (currentTranslation === -slideWidth * numOfImages) {
+    imageIndex = -1;
+    currentTranslation = 0;
+  }
+}
 

@@ -1,14 +1,71 @@
 @import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Crafty+Girls|Petit+Formal+Script|Eagle+Lake|Gochi+Hand|Engagement|Architects+Daughter|Ruthie|Pacifico|Amatic+SC|Shadows+Into+Light+Two);
 
-html {
-  background: url(bg16.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.container {
+  background-image: url(17x12.5.jpg);
+/*  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  padding: 0;  remove any pre-existing padding, just in case
+  padding-bottom: 100%; /* for a 4:3 aspect ratio
+  margin-top: -25px;*/
+
+/*background-position: center ;
+*/background-size: 100%;
+background-repeat: no-repeat;
+padding: 0;
+padding-bottom: 5%;
+margin-top: -25px;
+}
+
+.top-strip {
+  background-color: #A2B823;
+  height: 6px;
+  width: 100%;
+  float: left;
+  display: block;
+}
+
+.btn-slide {
+text-align: center;
+width: 112px;
+height: 32px;
+display: block;
+font: 14px/14px 'TitilliumText22LMedium', Arial, sans-serif;
+color: #000;
+text-decoration: none;
+background: url(green-button.png) no-repeat 0 0;
+background-position: center center;
+background-repeat: no-repeat;
+position: relative;
+z-index: 10;
+padding: 10px 30px;
+margin: 10px;
+display: inline;
+/*border radius*/
+-webkit-border-bottom-right-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-bottomright: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+}
+
+.signed-in-navbar.signed-out-navbar {
+  padding: 10px 30px;
+  margin: 10px;
+  display: inline;
+}
+
+.btn-slide.far-left {
+margin: 0 700px 0 50px;
+}
+
+#float-sign-out {
+  margin-left: 142px;
 }
 
 .page-wrap {
+  position: relative;
   width: 300px;
   height: 420px;
   margin: 75px auto;
@@ -24,6 +81,7 @@ html {
   width: 4500px;
   height: 420px;
   background: white;
+  overflow: hidden;
 }
 
 .sign-up {
@@ -53,7 +111,7 @@ img {
   height: 170px;
 }
 
-.sign-in-up {
+/*.sign-in-up {
   position: fixed;
   top: 5px;
   right:9px;
@@ -64,7 +122,7 @@ img {
   width: auto;
   padding: 7px;
   font-family: Julius Sans One;
-}
+}*/
 
 .sign-in-up ul li {
   text-decoration: none;
@@ -76,15 +134,14 @@ img {
 .stop {
   position: fixed;
   bottom:15%;
-  left: 50%;
+  left: 49%;
   margin-top: -50px;
   margin-left: -65px;
   background-color: black;
   font-weight: bold;
   width: 130px;
   text-align: center;
-  font-family: Julius Sans One;
-  color: white;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;  color: white;
   font-size: 50px;
   border-radius: 30px/10px;
   border: 3px solid black;
@@ -105,6 +162,7 @@ img {
   padding-left: 10px;
   padding-right: 15px;
 }
+
 .sign-up {
   height: 420px;
   background: #141414;
@@ -144,7 +202,7 @@ img {
 }
 
 #stop h1{
-  font-family: Julius Sans One;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-size: 32px;
   border-width: 2px;
 
@@ -226,8 +284,8 @@ h3 {
 h4 {
   font-size: 15px;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 22px;
+  padding-top: 10px;
+  padding-bottom: 14px;
   color: #6cd623;
 }
 
@@ -297,6 +355,7 @@ h5 {
 #leave-it{
   display: inline;
   position: relative;
+  background-image: linear-gradient(#385384,#385384);
 }
 
 #last-button {
@@ -327,7 +386,7 @@ h5 {
 }
 
 #sib {
-margin: 7px 0px 0px 93px;
+  margin: 7px 0px 0px 93px;
 }
 
 #sub {
@@ -363,22 +422,61 @@ li {
 }
 
 .art-info {
-  position: fixed;
+  position: absolute;
   right: 11px;
-  top: 132px;
-  width: 300px;
+  top: 150px;
+  width: 30%;
   height: auto;
-  background-color: silver;
+  background-color:#ededed;
+  border-radius: 6px;
+  color:#777777;
+  font-family:arial;
+  text-shadow:1px 1px 0px #ffffff;
+  padding-top: 10px;
+  font-size: 15px
 }
 
 .table-type {
   font-family: "Crafty Girls", Helvetica, sans-serif;;
-  color: red;
+  color: #E86850;
+  font-weight: bold;
+  padding-left: 20px;
 }
 
 .table-info {
-  padding-left: 10px;
-  font-size: 11px;
+  padding-right: 20px;
+}
+
+.last :hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+  background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+  background-color:#dfdfdf;
+}
+
+table tr {
+  padding: 0 24px 0 25px;
+}
+
+table td {
+  border-bottom: solid 0.5px black;
+  padding: 5px 30px;
+}
+
+table a:link {
+  text-decoration: none;
+  font-family: "Crafty Girls", Helvetica, sans-serif;;
+  color: blue;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+table a:hover {
+  color: #bd5a35;
+}
+
+.last {
+  padding-top: 10px;
 }
 
 .fave-buttons {
@@ -399,12 +497,52 @@ li {
   text-decoration: none;
 }
 
-.info {
-  border: 2px inset black;
+#stop {
+  position: relative;
+  background-image: linear-gradient(#321111,black);
+  color: red;
+  border-radius: 2px;
+  border: 3px solid black;
 }
 
-td, th {
-  border-bottom: solid 1px black;
+.space {
+  width: 100%;
+  height: 50px;
+}
+
+.lvi{
+  padding: 12px 18px;
+  right: -30px;
+  font-size: 25px;
+  margin: 5px 20px -15px 0;
+}
+
+#love-it {
+  padding-right: 25px;
+  text-indent: 10px;
+}
+
+/******************Favorites page******************/
+
+.scroll{
+  width: 300px;
+  position: relative;
+  display: inline;
+  width: auto%;
+  overflow: hidden;
+}
+
+.box {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+}
+
+.box .one, .box .two {
+  -webkit-box-flex: 1;
+}
+
+.box .three {
+  -webkit-box-flex: 3;
 }
 
 /*body {

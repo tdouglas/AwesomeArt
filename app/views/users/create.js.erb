@@ -1,6 +1,7 @@
 <% if @user.save %>
   successfulSignInUp()
-  $('#signed-out-navbar li').html('<%= link_to "Log out", log_out_path %>');
+  $('.sign-in-up').html('<%=j render 'navbar2' %>');
+  $('.#love-it').attr("style: inline")
 <% else %>
   unsuccessfulSignInUp()
 <% end %>

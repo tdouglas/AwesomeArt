@@ -7,24 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div id="container">
-
-  <nav class="sign-in-up">
-
+<div class="top-strip">
+</div><!--.top-strip-->
+<div class="awesomeness">
+</div><!--.awesomeness-->
+ <nav class="sign-in-up">
     <% if current_user %>
     <%= render 'navbar2' %>
     <% else %>
     <%= render 'navbar' %>
     <% end %>
+ </nav>
 
-  </nav>
 
 
 
 <%= yield %>
 
-</div> <!-- container -->
 </body>
 </html>
 
