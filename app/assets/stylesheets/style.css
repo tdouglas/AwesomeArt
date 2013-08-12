@@ -2,19 +2,11 @@
 
 .container {
   background-image: url(17x12.5.jpg);
-/*  background-size: 100% auto;
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center bottom;
-  padding: 0;  remove any pre-existing padding, just in case
-  padding-bottom: 100%; /* for a 4:3 aspect ratio
-  margin-top: -25px;*/
-
-/*background-position: center ;
-*/background-size: 100%;
-background-repeat: no-repeat;
-padding: 0;
-padding-bottom: 5%;
-margin-top: -25px;
+  padding: 0;
+  padding-bottom: 5%;
+  margin-top: -25px;
 }
 
 .top-strip {
@@ -305,8 +297,8 @@ h5 {
 
 #sign-in p {
   position: relative;
-  bottom: -18px;
-  right: 8px;
+  bottom: -15px;
+  right: 3px;
   font-size: 11px;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   margin: 0 0 30px 0;
@@ -315,8 +307,8 @@ h5 {
 
 #log-in p {
   position: relative;
-  bottom: -90px;
-  right: 3px;
+  bottom: -70px;
+  right: 20px;
   font-size: 11px;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   margin: 0 0 30px 0;
@@ -334,7 +326,7 @@ h5 {
   background-image: -webkit-linear-gradient(#ee6767,#c83b3a);
   background-image: -moz-linear-gradient(#ee6767,#c83b3a);
   background-image: linear-gradient(#ee6767,#c83b3a);
-  padding: 6px 10px 5px 10px;
+  padding: 5px 10px 5px 10px;
   font-size: 14px;
   font-weight: 500;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
@@ -347,7 +339,16 @@ h5 {
   right: -30px;
 }
 
+#log-in-button {
+  margin-left: 20px
+}
+
 #love-it {
+  display: none;
+  position: relative;
+}
+
+#will-love-it {
   display: inline;
   position: relative;
 }
@@ -522,27 +523,49 @@ table a:hover {
   text-indent: 10px;
 }
 
+.space h1 {
+  font-family: 'Engagement';
+  font-size: 50px;
+  text-align: center;
+  padding: 20px;
+}
+
 /******************Favorites page******************/
 
-.scroll{
-  width: 300px;
+.fave-page {
+  margin-top: -25px;
+}
+
+.x {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.x img {
+  width: 5%;
+  height: 2%;
+  opacity:0.2;
+}
+
+.x:hover{
+  opacity: 0.8;
+}
+
+.a-favorite {
   position: relative;
-  display: inline;
-  width: auto%;
-  overflow: hidden;
+  margin-top: 40px;
 }
 
-.box {
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
+.a-favorite img{
+  margin: 0 175px 30px 10px;
 }
 
-.box .one, .box .two {
-  -webkit-box-flex: 1;
-}
-
-.box .three {
-  -webkit-box-flex: 3;
+.a-favorite a {
+  text-decoration: none;
+  font-size:
+  font-weight
 }
 
 /*body {

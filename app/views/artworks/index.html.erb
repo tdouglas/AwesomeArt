@@ -44,12 +44,13 @@
     </table>
 
     <div class="love-it-leave-it-buttons">
-      <% if current_user %>
-        <button class="major-button lvi love-it" id="love-it">Love It</button>
-      <% else %>
-        <p>Sign in above to favorite the artwork</p>
-        <button class="major-button lvi love-it" id="love-it" style="display: none">Love It</button>
-      <% end %>
+    <!-- Ruby way -->
+    <% if current_user %>
+      <button class="major-button lvi" id="love-it" style="display: inline">Love It</button>
+    <% else %>
+      <button class="major-button lvi" id="love-it">Love It</button>
+      <button class="major-button lvi" id="will-love-it">Love It</button>
+    <% end %>
       <button class="major-button lvi" id="leave-it">Leave It</button>
     </div> <!-- love-it-leave-it-buttons -->
 
