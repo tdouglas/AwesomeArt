@@ -1,0 +1,3 @@
+function alertMeToo() {
+  alert("yes!!");
+}

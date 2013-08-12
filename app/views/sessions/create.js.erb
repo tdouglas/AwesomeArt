@@ -1,9 +1,8 @@
 <% if @user %>
   successfulSignInUp()
   $('.sign-in-up').html('<%=j render 'navbar2'  %>');
-  $('.#love-it').attr("style: inline")
-
-// also show users name welcome across top
+  $('#love-it').css("display", "inline" );
+  $('#will-love-it').css("display", "none");
 
 <% else %>
   $('#two-field').prepend('<p>Invalid email or password</p>');

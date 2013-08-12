@@ -1,7 +1,8 @@
 <% if @user.save %>
   successfulSignInUp()
   $('.sign-in-up').html('<%=j render 'navbar2' %>');
-  $('.#love-it').attr("style: inline")
+  $('#love-it').css("display", "inline" );
+  $('#will-love-it').css("display", "none" );
 <% else %>
   unsuccessfulSignInUp()
 <% end %>

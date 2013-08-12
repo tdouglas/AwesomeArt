@@ -7,7 +7,7 @@ $(function(){
   $('.sign-up').hide();
   $('.sign-in').hide();
   $('.art-info').hide();
-  $('#leave-it').click(loadArtworkData);
+  $('#leave-it').click(reload);
 });
 
 function loadArtworkData() {
@@ -34,11 +34,7 @@ function appendImages() {
 
 function setUpPage() {
   $('.art-info').hide();
-  // $('.page-wrap').show();
-  // $('.flipbox-container').hide();
   $('.start').hide();
-  // $('.page-wrap').hide();
-  // $('.page-wrap').show();
   $('.page-wrap').slideDown(2100);
   signUpDiv = $('.sign-up');
   carouselDiv = $('.inner-image');
@@ -47,33 +43,17 @@ function setUpPage() {
 
 function init() {
   $('.inner-image').css('webkit-transition', '-webkit-transform 1200ms');
-  $('#stop').click(function() {
-    stop();
-  });
-  $('#log-in-button').click(function() {
-    // flipToLogIn();
-  });
-  $('#last-button').click(function() {
-    // flipToSignUp();
-  });
+  $('#stop').click(stop);
+  $('#log-in-button').click(promptSignIn);
+  $('#last-button').click(promptSignUp);
   myInterval = setInterval(next, 1200);
   $('#float-sign-in').click(revealSignIn);
-  // $('#float-sign-in').click(function() {
-  //   $('.inner-image').hide();
-  //   $('.flipbox-container').show();
-  //   $('.sign-up').hide();
-  //   $('.sign-in').show();
-    // $('#signed-out-navbar li:last').detach();
-  // });
-  // initally sign-up-nav  $('#float-sign-in').click(revealSignIn);
   $('#float-sign-up').click(function() {
     $('.inner-image').hide();
     $('.flipbox-container').show();
     $('.sign-in').hide();
     $('.sign-up').show();   //just added
     $('.start').hide();
-
-    // $('#signed-out-navbar li:first').detach();
   });
 }
 
@@ -128,6 +108,12 @@ function position() {
   // console.log(currentTranslation);
   // console.log(index);
   clearInterval(myInterval);
+  $('#love-it').click(saveFaves);
+  $('#will-love-it').click(promptSignIn);
+  console.log("ready to save or not");
+}
+
+  function saveFaves() {
   $('#love-it').data(artworkData.data[index]);
   $('#love-it').click(function(){
     $.ajax({
@@ -140,8 +126,17 @@ function position() {
   });
 }
 
+function promptSignUp() {
+  $('.inner-image').hide();
+  $('.sign-up').show();
+  $('#float-sign-up').click();
+}
 
-
+function promptSignIn() {
+  $('.sign-up').hide();
+  $('.sign-in').show();
+  $('#float-sign-in').click();
+}
 
 // $('.inner-image').hide();
 // $('.sign-in').hide();
@@ -196,3 +191,14 @@ function favScroll() {
   }
 }
 
+function reload() {
+  $('.stop').show();
+  $('.art-info').hide();
+  loadArtworkData();
+  $('.space').prepend('<h1>Just a sec, while we fetch you some more artwork!</h1>');
+  setTimeout(back, 3000);
+}
+
+function back() {
+  $('.space').text('');
+}
