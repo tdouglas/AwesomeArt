@@ -1,0 +1,124 @@
+<div class="top-strip">
+</div><!--.top-strip-->
+<div class="awesomeness">
+</div><!--.awesomeness-->
+ <nav class="sign-in-up">
+    <% if current_user %>
+    <%= render 'navbar2' %>
+    <% else %>
+    <%= render 'navbar' %>
+    <% end %>
+ </nav>
+
+<div class="container">
+
+  <div class="space">
+  </div>
+
+  <div class="art-info">
+
+
+    <table cellspacing='0' class="info">
+      <thead class="cell-header">
+      </thead>
+      <tbody class="cell-content">
+        <tr>
+          <td class="table-type">Title:</td>
+          <td class="table-info" id="artwork-title"> </td>
+        </tr>
+        <tr>
+          <td class="table-type">Artist:</td>
+          <td class="table-info" id="artwork-artist"> </td>
+        </tr>
+        <tr>
+          <td class="table-type">Medium:</td>
+          <td class="table-info" id="artwork-medium"> </td>
+        </tr>
+        <tr>
+          <td class="table-type">Collection:</td>
+          <td class="table-info" id="artwork-collection"> </td>
+        </tr>
+        <tr>
+          <td class="table-type">Date:</td>
+          <td class="table-info" id="artwork-date"> </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table cellspacing='0' class="info">
+      <thead class="cell-header">
+      </thead>
+      <tbody class="cell-content">
+        <tr>
+          <td class="table-info last"><a href='' target="_blank" id="artwork-link">Find me at the Brooklyn Museum!</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="love-it-leave-it-buttons">
+      <% if current_user %>
+        <button class="major-button lvi love-it" id="love-it">Love It</button>
+      <% else %>
+        <p>Sign in above to favorite the artwork</p>
+        <button class="major-button lvi love-it" id="love-it" style="display: none">Love It</button>
+      <% end %>
+      <button class="major-button lvi" id="leave-it">Leave It</button>
+    </div> <!-- love-it-leave-it-buttons -->
+
+  </div> <!-- art-info -->
+
+  <div class="page-wrap">
+
+    <div class="flipbox-container">
+
+      <div class="start inner-box">
+
+        <img id="logo" src="assets/new-logo.png"/>
+          <h5>@t random</h5>
+            <p id="find-fave">
+              Find and fave rare artistic treasures from the Brooklyn Museum.
+            </p>
+      </div> <!--start inner-box-->
+
+      <div class="sign-up flipbox">
+        <h2>Museum Art.</h2><h3>When You Want It.</h3>
+
+        <div id="extend">
+          <h4>Sign-up to <span>save</span> your favorite artwork <span>forever</span>.</h4>
+        </div> <!-- extend -->
+
+        <div class="input" id="sign-up-div">
+        </div> <!-- input -->
+
+        <div id="sign-in" id="three-fields">
+          <p>Already have an account?
+            <%= link_to "Log-In", log_in_path, :class => "major-button", :id => "log-in-button", remote: true %></p>
+        </div> <!-- sign-in -->
+
+      </div> <!-- sign-up & flipbox-->
+
+      <div class="sign-in flipbox">
+        <h1>Login</h1> <h3>to your Account</h3>
+
+        <div class="input" id="two-field">
+        </div> <!-- input -->
+
+        <div id="log-in">
+          <p>Get started - It's free!
+          <button class="major-button" id="last-button">Sign-Up</button></p>
+        </div> <!-- log-in -->
+
+      </div> <!--sign-in & flipbox-->
+
+    </div> <!-- flipbox-container -->
+
+    <div class="inner-image" id="strip">
+    </div> <!-- inner-image -->
+
+  </div> <!-- page-wrap -->
+
+  <div class="major-button stop" id="stop">
+    <h1>STOP</h1>
+  </div> <!-- stop -->
+
+</div> <!-- container -->
