@@ -3,6 +3,10 @@ var carouselDiv;
 var artworkData;
 
 $(function(){
+  $('.awesomeness').css("display", "none");
+  $('#end').append('<p>Your artwork is loading...</p>')
+  // $('p').replaceWith('<p>Please be patient.</p>');
+
   loadArtworkData();
   $('.sign-up').hide();
   $('.sign-in').hide();
@@ -36,9 +40,10 @@ function setUpPage() {
   $('.art-info').hide();
   $('.start').hide();
   $('.page-wrap').slideDown(2100);
+  $('#end').text('');
   signUpDiv = $('.sign-up');
   carouselDiv = $('.inner-image');
-  setTimeout(init, 2500); // postponing init until the box falls
+  setTimeout(init, 1200); // postponing init until the box falls
 }
 
 function init() {
@@ -48,12 +53,13 @@ function init() {
   $('#last-button').click(promptSignUp);
   myInterval = setInterval(next, 1200);
   $('#float-sign-in').click(revealSignIn);
+  $('#float-about-us').click(aboutUs);
   $('#float-sign-up').click(function() {
-    $('.inner-image').hide();
-    $('.flipbox-container').show();
-    $('.sign-in').hide();
-    $('.sign-up').show();   //just added
-    $('.start').hide();
+  $('.inner-image').hide();
+  $('.flipbox-container').show();
+  $('.sign-in').hide();
+  $('.sign-up').show();   //just added
+  $('.start').hide();
   });
 }
 
@@ -124,6 +130,7 @@ function saveFaves() {
     });
     window.location = "/favorites";
   });
+  $('.x').click(deleteArt);
 }
 
 function promptSignUp() {
@@ -136,6 +143,10 @@ function promptSignIn() {
   $('.sign-up').hide();
   $('.sign-in').show();
   $('#float-sign-in').click();
+}
+
+function deleteArt() {
+  $(this).parent().parent().remove();
 }
 
 // $('.inner-image').hide();
@@ -193,7 +204,11 @@ function favScroll() {
 
 function reload() {
   $('.stop').show();
+  $('.start').hide();
+  $('.sign-up').hide();
+  $('.sign-in').hide();
   $('.art-info').hide();
+  $('.inner-image').show();
   loadArtworkData();
   $('.space').prepend('<h1>Just a sec, while we fetch you some more artwork!</h1>');
   setTimeout(back, 3000);
@@ -203,11 +218,10 @@ function back() {
   $('.space').text('');
 }
 
-function signInValidations() {
-  $('#two-field form').on('click', "$('#password')", function(){
-    alert("blur");
-    if ($('#password').val().length < 8) {
-      $('#two-field').prepend('<p>Password too short</p>');
-    }
-  });
+function aboutUs() {
+  if ($('.awesomeness').is(':visible')) {
+    $('.awesomeness').slideUp('slow');
+  } else {
+    $('.awesomeness').slideDown("slow");
+  }
 }

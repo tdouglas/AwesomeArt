@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Crafty+Girls|Petit+Formal+Script|Eagle+Lake|Gochi+Hand|Engagement|Architects+Daughter|Ruthie|Pacifico|Amatic+SC|Shadows+Into+Light+Two);
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Crafty+Girls|Petit+Formal+Script|EngagementPacifico|Amatic+SC|Shadows+Into+Light+Two|Source+Sans+Pro:400,600,900|Lato:400,100italic);
 
 .container {
   background-image: url(17x12.5.jpg);
@@ -10,7 +10,7 @@
 }
 
 .top-strip {
-  background-color: #A2B823;
+  background-color: rgba(179, 196, 83, 0.92);
   height: 6px;
   width: 100%;
   float: left;
@@ -22,7 +22,7 @@ text-align: center;
 width: 112px;
 height: 32px;
 display: block;
-font: 14px/14px 'TitilliumText22LMedium', Arial, sans-serif;
+font: 14px/14px 'TitilliumText22LMedium', Arial, serif;
 color: #000;
 text-decoration: none;
 background: url(green-button.png) no-repeat 0 0;
@@ -42,6 +42,27 @@ border-bottom-right-radius: 10px;
 border-bottom-left-radius: 10px;
 }
 
+#float-home {
+background: url(home.png) no-repeat 0 0;
+background-position: center center;
+background-repeat: no-repeat;
+position: relative;
+}
+
+#float-faves {
+background: url(fave.png) no-repeat 0 0;
+background-position: center center;
+background-repeat: no-repeat;
+position: relative;
+}
+
+#float-about-us {
+background: url(down-arrow.png) no-repeat 0 0;
+background-position: center center;
+background-repeat: no-repeat;
+position: relative;
+}
+
 .signed-in-navbar.signed-out-navbar {
   padding: 10px 30px;
   margin: 10px;
@@ -49,11 +70,15 @@ border-bottom-left-radius: 10px;
 }
 
 .btn-slide.far-left {
-margin: 0 700px 0 50px;
+margin: 0 255px 0 70px;
 }
 
 #float-sign-out {
-  margin-left: 142px;
+  margin-left: 300px;
+}
+
+#float-sign-in {
+  margin-left: 440px;
 }
 
 .page-wrap {
@@ -116,11 +141,17 @@ img {
   font-family: Julius Sans One;
 }*/
 
-.sign-in-up ul li {
-  text-decoration: none;
-  display: inline;
-  margin: 9px;
-  text-align: center;
+.sign-in-up p{
+  cursor: pointer;
+}
+
+#search-icon {
+width: 300px;
+height: 300px;
+position: absolute;
+background-position: center center;
+left: 17%;
+bottom: -13%;
 }
 
 .stop {
@@ -133,13 +164,23 @@ img {
   font-weight: bold;
   width: 130px;
   text-align: center;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;  color: white;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: white;
   font-size: 50px;
   border-radius: 30px/10px;
   border: 3px solid black;
   -moz-box-shadow: 0 0 20px black;
   -webkit-box-shadow: 0 0 20px black;
   cursor: pointer;
+}
+
+#end p {
+  padding-top: 25px;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 15px;
+  color: white;
+  font-family: Julius Sans One;
+  text-align: center;
 }
 
 .inner-box {
@@ -289,7 +330,7 @@ h5 {
 }
 
 #find-fave {
-  font-family: 'Calibri', sans-serif;
+  font-family: 'Lato', Arial, sans-serif;
   padding: 200px 20px 0 30px;
   font-size: 22px;
   color: #6d87b4;
@@ -524,16 +565,18 @@ table a:hover {
 }
 
 .space h1 {
-  font-family: 'Engagement';
-  font-size: 50px;
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 40px;
   text-align: center;
-  padding: 20px;
+  padding-top: 60px;
+  font-weight: 600;
 }
 
 /******************Favorites page******************/
 
 .fave-page {
-  margin-top: -25px;
+  margin-top: -5px;
 }
 
 .x {
@@ -541,16 +584,18 @@ table a:hover {
   top: 0;
   left: 0;
   cursor: pointer;
+  opacity:0.2;
+  width: 50px;
+  height: 50px;
 }
 
 .x img {
-  width: 5%;
-  height: 2%;
-  opacity:0.2;
+  width: 40px;
+  height: 40px;
 }
 
 .x:hover{
-  opacity: 0.8;
+  opacity: 1.5;
 }
 
 .a-favorite {
@@ -564,9 +609,108 @@ table a:hover {
 
 .a-favorite a {
   text-decoration: none;
-  font-size:
-  font-weight
 }
+
+.art {
+  height: 420px;
+}
+
+.art span{
+  line-height: 1.8;
+}
+
+#title {
+  font-family: 'Lato' Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 50px;
+}
+
+#artist {
+  font-family: 'Lato' Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 30px;
+  padding-bottom: 15px;
+
+}
+
+.other{
+  font-family: Times, sans-serif;
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+/******************About Us page******************/
+
+.awesomeness {
+  position: relative;
+  border: 41px solid rgba(179, 196, 83, 0.92);
+  height: 600px;
+}
+
+.awesomeness img{
+  width: 150px;
+  height: 150px;
+  padding: 20px 30px;
+}
+
+#credit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: 'Source Sans Pro', Arial, serif;
+  font-size: 120px;
+  font-weight: 900;
+  margin-top: -90px;
+  margin-right: -50px;
+  color: gray;
+}
+
+#credit a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:link {color: gray;}      /* unvisited link */
+a:visited {color: black;}  /* visited link */
+
+.awesomeness h2 {
+  font-family: 'Source Sans Pro', Arial, serif;
+  font-size: 30px;
+  padding-top: 20px;
+  font-weight: 600;
+  color: gray;
+}
+
+.awesomeness h3 {
+  font-family: 'Lato', Arial, serif;
+  font-style: italic;
+  font-size: 25px;
+  font-weight: 400px;
+  text-align: left;
+  padding-top: 10px;
+  color: rgb(132, 170, 132);
+}
+
+.awesomeness
+
+.td {
+  position: absolute;
+  top: 100px;
+  height: 200px;
+  width: 70%;
+}
+
+.mv {
+  position: absolute;
+  height: 200px;
+  bottom: 50px;
+  width: 70%;
+}
+
+#toolkit {
+  padding-top: 60px;
+}
+
 
 /*body {
 -webkit-transition: -webkit-transform 2s ease-in-out;
