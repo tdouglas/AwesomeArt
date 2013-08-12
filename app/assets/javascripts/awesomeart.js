@@ -208,8 +208,10 @@ function reload() {
   $('.sign-up').hide();
   $('.sign-in').hide();
   $('.art-info').hide();
+  $('.inner-image').fadeOut(1000);
+  $('.inner-image').html('');
   loadArtworkData();
-  $('.inner-image').show();
+  $('.inner-image').fadeIn(1000);
   $('.space').prepend('<h1>Just a sec, while we fetch you some more artwork!</h1>');
   setTimeout(back, 3000);
 }
