@@ -64,7 +64,13 @@ position: relative;
 
 .signed-in-navbar a{
   color: white;
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.signed-out-navbar a{
+  color: white;
+  font-weight: 500;
   font-size: 14px;
 }
 
@@ -74,6 +80,10 @@ margin: 0 255px 0 70px;
 
 #float-sign-out {
   margin-left: 265px;
+}
+
+#float-sign-in {
+  margin-left: 385px;
 }
 
 .page-wrap {
