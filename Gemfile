@@ -6,7 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # Remember to switch to Postgres for production
-gem 'sqlite3'
+gem 'pg', :group => :production
 
 gem 'nokogiri'
 gem 'openurl'
@@ -28,6 +28,8 @@ gem 'bcrypt-ruby', require: 'bcrypt'
 gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git'
 
 group :development, :test do
+  gem 'sqlite3'
+
   gem 'pry-rails'           # Causes rails console to open pry
                             # https://github.com/rweng/pry-rails
   gem 'pry-debugger'        # Adds step, next, finish, and continue commands and breakpoints
