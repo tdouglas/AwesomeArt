@@ -21,6 +21,24 @@ describe("init", function(){
   });
 });
 
+describe("promptSignUp", function(){
+  it("should prompt you to sign up", function(){
+    loadFixtures("index.html.erb");
+    promptSignUp();
+    expect($('.inner-image')).toBeHidden();
+    expect($('.sign-up')).toBeVisible();
+  });
+});
+
+describe("promptSignIn", function(){
+  it("should prompt you to sign in", function(){
+    loadFixtures("index.html.erb");
+    promptSignIn();
+    expect($('.sign-up')).toBeHidden();
+    expect($('.sign-in')).toBeVisible();
+  });
+});
+
 describe("successfulSignInUp", function(){
   it("should reveal image", function(){
     loadFixtures("index.html.erb");
@@ -35,6 +53,25 @@ describe("unsuccessfulSignInUp", function(){
     loadFixtures("index.html.erb");
     unsuccessfulSignInUp();
     expect($('#sign-up-div')).toContainHtml("<p>Invalid email or password</p>");
+  });
+});
+
+
+describe("reload", function(){
+  it("should reload the artworks", function(){
+    loadFixtures("index.html.erb");
+    reload();
+    expect($('.stop')).toBeVisible();
+    expect($('.art-info')).not.toBeVisible();
+    expect($('.space')).toContainHtml('<h1>Just a sec, while we fetch you some more artwork!</h1>');
+  });
+});
+
+describe("back", function(){
+  it("should clear the message", function(){
+    loadFixtures("index.html.erb");
+    back();
+    expect($('.space')).toContainHtml('');
   });
 });
 
