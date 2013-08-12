@@ -113,7 +113,7 @@ function position() {
   console.log("ready to save or not");
 }
 
-  function saveFaves() {
+function saveFaves() {
   $('#love-it').data(artworkData.data[index]);
   $('#love-it').click(function(){
     $.ajax({
@@ -201,4 +201,13 @@ function reload() {
 
 function back() {
   $('.space').text('');
+}
+
+function signInValidations() {
+  $('#two-field form').on('click', "$('#password')", function(){
+    alert("blur");
+    if ($('#password').val().length < 8) {
+      $('#two-field').prepend('<p>Password too short</p>');
+    }
+  });
 }

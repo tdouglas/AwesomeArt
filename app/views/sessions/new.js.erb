@@ -2,3 +2,10 @@ $('.start').hide()
 $('#two-field').html('<%=j render :partial => "signin" %>')
 $('.start').hide()
 
+$('#password').keyup(function(){
+  if ($('#password').val().length < 6) {
+    $('#password').css("outline-color", "red");
+  } else {
+    $('#password').css("outline-color", "");
+  }
+})

@@ -1,2 +1,20 @@
 $('#sign-up-div').html('<%=j render "signup" %>')
 
+var pw = $('#sign-up-password')
+var confirm = $('#sign-up-password-confirmation')
+
+pw.keyup(function(){
+  if (pw.val().length < 6) {
+    pw.css("outline-color", "red");
+  } else {
+    pw.css("outline-color", "");
+  }
+})
+
+confirm.keyup(function(){
+  if (confirm.val().length < 6 || confirm.val() != pw.val()) {
+    confirm.css("outline-color", "red");
+  } else if (confirm.val().length > 5 && confirm.val() == pw.val()){
+    confirm.css("outline-color", "");
+  }
+})
