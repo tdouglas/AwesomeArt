@@ -22,7 +22,7 @@ text-align: center;
 width: 112px;
 height: 32px;
 display: block;
-font: 14px/14px 'TitilliumText22LMedium', Arial, sans-serif;
+font: 14px/14px 'TitilliumText22LMedium', Arial, serif;
 color: #000;
 text-decoration: none;
 background: url(green-button.png) no-repeat 0 0;
@@ -42,18 +42,38 @@ border-bottom-right-radius: 10px;
 border-bottom-left-radius: 10px;
 }
 
+#float-home {
+background: url(home.png) no-repeat 0 0;
+background-position: center center;
+background-repeat: no-repeat;
+position: relative;
+}
+
+#float-faves {
+background: url(fave.png) no-repeat 0 0;
+background-position: center center;
+background-repeat: no-repeat;
+position: relative;
+}
+
 .signed-in-navbar.signed-out-navbar {
   padding: 10px 30px;
   margin: 10px;
   display: inline;
 }
 
+.signed-in-navbar a{
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 .btn-slide.far-left {
-margin: 0 700px 0 50px;
+margin: 0 255px 0 70px;
 }
 
 #float-sign-out {
-  margin-left: 142px;
+  margin-left: 265px;
 }
 
 .page-wrap {
@@ -133,7 +153,8 @@ img {
   font-weight: bold;
   width: 130px;
   text-align: center;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;  color: white;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: white;
   font-size: 50px;
   border-radius: 30px/10px;
   border: 3px solid black;
@@ -524,7 +545,7 @@ table a:hover {
 }
 
 .space h1 {
-  font-family: 'Engagement';
+  font-family: 'Engagement', Helvetica, sans-serif;
   font-size: 50px;
   text-align: center;
   padding: 20px;
@@ -541,16 +562,18 @@ table a:hover {
   top: 0;
   left: 0;
   cursor: pointer;
+  opacity:0.2;
+  width: 50px;
+  height: 50px;
 }
 
 .x img {
-  width: 5%;
-  height: 2%;
-  opacity:0.2;
+  width: 40px;
+  height: 40px;
 }
 
 .x:hover{
-  opacity: 0.8;
+  opacity: 1.5;
 }
 
 .a-favorite {
@@ -564,9 +587,33 @@ table a:hover {
 
 .a-favorite a {
   text-decoration: none;
-  font-size:
-  font-weight
 }
+
+.art {
+  height: 420px;
+}
+
+.art span{
+  line-height: 2.0;
+}
+
+#title {
+  font-family: 'Engagement' Helvetica, sans-serif;
+  font-size: 60px;
+}
+
+#artist {
+  font-family: 'Engagement' Helvetica, sans-serif;
+  font-size: 40px;
+  padding-bottom: 10px;
+
+}
+
+.other{
+  font-family: 'TitilliumText22LMedium', Arial, serif;
+  font-size: 30px;
+}
+
 
 /*body {
 -webkit-transition: -webkit-transform 2s ease-in-out;
