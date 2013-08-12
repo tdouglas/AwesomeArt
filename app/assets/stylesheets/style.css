@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Crafty+Girls|Petit+Formal+Script|Eagle+Lake|Gochi+Hand|Engagement|Architects+Daughter|Ruthie|Pacifico|Amatic+SC|Shadows+Into+Light+Two);
+@import url(https://fonts.googleapis.com/css?family=Julius+Sans+One|Crafty+Girls|Petit+Formal+Script|Eagle+Lake|Gochi+Hand|Engagement|Architects+Daughter|Ruthie|Pacifico|Amatic+SC|Shadows+Into+Light+Two|Source+Sans+Pro:400,600,900|Lato:400,100italic);
 
 .container {
   background-image: url(17x12.5.jpg);
@@ -685,7 +685,6 @@ a:visited {color: black;}  /* visited link */
   font-family: 'Lato', Arial, serif;
   font-style: italic;
   font-size: 25px;
-  font-weight: 400px;
   text-align: left;
   padding-top: 10px;
   color: rgb(132, 170, 132);

@@ -18,13 +18,3 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-
-h1 {
-	font-size: 30px;
-	font-weight: bold;
-	font-family: Helvetica;
-}
-
-#main_heading {
-	color: red;
-}
