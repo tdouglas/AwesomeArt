@@ -99,6 +99,7 @@ GEM
     openurl (0.4.3)
       ensure_valid_encoding
       marc
+    pg (0.15.1)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -199,6 +200,7 @@ DEPENDENCIES
   meta_request
   nokogiri
   openurl
+  pg
   pry
   pry-debugger
   pry-rails
