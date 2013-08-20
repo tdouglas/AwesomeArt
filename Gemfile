@@ -14,6 +14,11 @@ gem 'pry'
 
 gem 'puma'
 
+gem 'memcachier'  # For our specific memcache on heroku
+gem 'rack-cache'  # This adds our rack-cache middleware
+gem 'dalli'       # Newer cache client
+gem 'kgio'        # Better i/o
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
