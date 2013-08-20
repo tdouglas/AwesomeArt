@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130806194301) do
+ActiveRecord::Schema.define(:version => 20130820235537) do
 
   create_table "artists", :force => true do |t|
     t.integer  "user_id"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20130806194301) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "artists", ["name"], :name => "index_artists_on_name"
 
   create_table "artists_users", :id => false, :force => true do |t|
     t.integer "artist_id"
@@ -39,6 +41,13 @@ ActiveRecord::Schema.define(:version => 20130806194301) do
     t.datetime "updated_at",      :null => false
   end
 
+  add_index "artworks", ["collection"], :name => "index_artworks_on_collection"
+  add_index "artworks", ["date"], :name => "index_artworks_on_date"
+  add_index "artworks", ["image_url"], :name => "index_artworks_on_image_url"
+  add_index "artworks", ["medium"], :name => "index_artworks_on_medium"
+  add_index "artworks", ["museum_page_url"], :name => "index_artworks_on_museum_page_url"
+  add_index "artworks", ["title"], :name => "index_artworks_on_title"
+
   create_table "artworks_users", :id => false, :force => true do |t|
     t.integer "artwork_id"
     t.integer "user_id"
@@ -52,5 +61,10 @@ ActiveRecord::Schema.define(:version => 20130806194301) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["password_hash"], :name => "index_users_on_password_hash"
+  add_index "users", ["password_salt"], :name => "index_users_on_password_salt"
+  add_index "users", ["screenname"], :name => "index_users_on_screenname"
 
 end
